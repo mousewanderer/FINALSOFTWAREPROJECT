@@ -1,0 +1,17 @@
+C:\Users\melwi\OneDrive\Desktop\FINAL PROJECT\SOFTDEV FINAL PROJECT\bin\Debug\net8.0-windows\SOFTDEV FINAL PROJECT.exe
+C:\Users\melwi\OneDrive\Desktop\FINAL PROJECT\SOFTDEV FINAL PROJECT\bin\Debug\net8.0-windows\SOFTDEV FINAL PROJECT.deps.json
+C:\Users\melwi\OneDrive\Desktop\FINAL PROJECT\SOFTDEV FINAL PROJECT\bin\Debug\net8.0-windows\SOFTDEV FINAL PROJECT.runtimeconfig.json
+C:\Users\melwi\OneDrive\Desktop\FINAL PROJECT\SOFTDEV FINAL PROJECT\bin\Debug\net8.0-windows\SOFTDEV FINAL PROJECT.dll
+C:\Users\melwi\OneDrive\Desktop\FINAL PROJECT\SOFTDEV FINAL PROJECT\bin\Debug\net8.0-windows\SOFTDEV FINAL PROJECT.pdb
+C:\Users\melwi\OneDrive\Desktop\FINAL PROJECT\SOFTDEV FINAL PROJECT\obj\Debug\net8.0-windows\SOFTDEV_FINAL_PROJECT.CREATE_form.resources
+C:\Users\melwi\OneDrive\Desktop\FINAL PROJECT\SOFTDEV FINAL PROJECT\obj\Debug\net8.0-windows\SOFTDEV_FINAL_PROJECT.LOGINFORM.resources
+C:\Users\melwi\OneDrive\Desktop\FINAL PROJECT\SOFTDEV FINAL PROJECT\obj\Debug\net8.0-windows\SOFTDEV FINAL PROJECT.csproj.GenerateResource.cache
+C:\Users\melwi\OneDrive\Desktop\FINAL PROJECT\SOFTDEV FINAL PROJECT\obj\Debug\net8.0-windows\SOFTDEV FINAL PROJECT.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\melwi\OneDrive\Desktop\FINAL PROJECT\SOFTDEV FINAL PROJECT\obj\Debug\net8.0-windows\SOFTDEV FINAL PROJECT.AssemblyInfoInputs.cache
+C:\Users\melwi\OneDrive\Desktop\FINAL PROJECT\SOFTDEV FINAL PROJECT\obj\Debug\net8.0-windows\SOFTDEV FINAL PROJECT.AssemblyInfo.cs
+C:\Users\melwi\OneDrive\Desktop\FINAL PROJECT\SOFTDEV FINAL PROJECT\obj\Debug\net8.0-windows\SOFTDEV FINAL PROJECT.csproj.CoreCompileInputs.cache
+C:\Users\melwi\OneDrive\Desktop\FINAL PROJECT\SOFTDEV FINAL PROJECT\obj\Debug\net8.0-windows\SOFTDEV FINAL PROJECT.dll
+C:\Users\melwi\OneDrive\Desktop\FINAL PROJECT\SOFTDEV FINAL PROJECT\obj\Debug\net8.0-windows\refint\SOFTDEV FINAL PROJECT.dll
+C:\Users\melwi\OneDrive\Desktop\FINAL PROJECT\SOFTDEV FINAL PROJECT\obj\Debug\net8.0-windows\SOFTDEV FINAL PROJECT.pdb
+C:\Users\melwi\OneDrive\Desktop\FINAL PROJECT\SOFTDEV FINAL PROJECT\obj\Debug\net8.0-windows\SOFTDEV FINAL PROJECT.genruntimeconfig.cache
+C:\Users\melwi\OneDrive\Desktop\FINAL PROJECT\SOFTDEV FINAL PROJECT\obj\Debug\net8.0-windows\ref\SOFTDEV FINAL PROJECT.dll
