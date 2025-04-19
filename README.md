@@ -26,6 +26,7 @@ Advanced Features:
  View Student Progress
  Manage Subjects
 
+(HELP)
 
 version 1
 
