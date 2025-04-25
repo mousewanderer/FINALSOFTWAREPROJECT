@@ -1,4 +1,9 @@
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Data.SqlClient;
+using SOFTDEV_FINAL_PROJECT;
+
+
+
 
 namespace SOFTDEV_FINAL_PROJECT
 {
@@ -6,14 +11,18 @@ namespace SOFTDEV_FINAL_PROJECT
     {
         public LOGINFORM()
         {
+         
             InitializeComponent();
         }
 
+
+        private string loggedInUsername;
+
+
+
         private void buttonCREATE_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("CREATE ACCOUNT", "Success");
-
-            // Open the Personal Information Profile Form
+     
             CREATE_form createform = new CREATE_form();
             createform.Show();
 
@@ -21,28 +30,68 @@ namespace SOFTDEV_FINAL_PROJECT
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            //Hardcoded username
-            string correctUsername = "admin";
-            string password = "Fish";
-
-            // Get user input
             string enteredUsername = textBoxUsername.Text.Trim();
             string enteredPassword = textBoxPassword.Text;
 
-            // Validate input
-            if (enteredUsername == correctUsername && enteredPassword == password)
+            using (SqlConnection conn = new SqlConnection("Server=ASUS_2023;Database=Final_ProjectDB;Trusted_Connection=True;"))
             {
-                MessageBox.Show("Login Successful!", "Success");
+                try
+                {
+                    conn.Open();
 
-                // Dashboard Form
-               
-                DASHBOARD_form DashForm = new DASHBOARD_form();
-                DashForm.Show();
+                    string query = "SELECT COUNT(*) FROM Students WHERE Username = @username AND KeyPassword = @password";
 
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@username", enteredUsername);
+                        cmd.Parameters.AddWithValue("@password", enteredPassword);
 
-                this.Hide(); // Hide the Login Form
+                        int userCount = (int)cmd.ExecuteScalar();
+
+                        if (userCount > 0)
+                        {
+                            string query2 = "SELECT FirstName, StudentID FROM Students WHERE Username = @username AND KeyPassword = @password";
+
+                            using (SqlCommand cmd2 = new SqlCommand(query2, conn))
+                            {
+                                cmd2.Parameters.AddWithValue("@username", enteredUsername);
+                                cmd2.Parameters.AddWithValue("@password", enteredPassword);
+
+                                using (SqlDataReader reader = cmd2.ExecuteReader())
+                                {
+                                    if (reader.Read())
+                                    {
+                                        string nameFromDB = reader["FirstName"].ToString();
+                                        string studentIdFromDB = reader["StudentID"].ToString();
+
+                                        MessageBox.Show($"Login Successful! Welcome, {nameFromDB} (ID: {studentIdFromDB})", "Success");
+
+                                        // You must modify your DASHBOARD_form constructor to accept two arguments
+                                        DASHBOARD_form dashForm = new DASHBOARD_form(nameFromDB, studentIdFromDB);
+                                        dashForm.Show();
+                                        this.Hide();
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Error fetching student details.", "Error");
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid username or password.", "Error");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error connecting to database:\n" + ex.Message, "Database Error");
+                }
             }
 
+
         }
+
     }
 }

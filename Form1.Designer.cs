@@ -101,11 +101,10 @@
             textBoxPassword.PasswordChar = '*';
             textBoxPassword.Size = new Size(203, 27);
             textBoxPassword.TabIndex = 6;
-            textBoxPassword.UseSystemPasswordChar = true;
             // 
             // buttonCREATE
             // 
-            buttonCREATE.Location = new Point(482, 353);
+            buttonCREATE.Location = new Point(678, 353);
             buttonCREATE.Name = "buttonCREATE";
             buttonCREATE.Size = new Size(94, 29);
             buttonCREATE.TabIndex = 7;
@@ -115,7 +114,7 @@
             // 
             // buttonLogin
             // 
-            buttonLogin.Location = new Point(663, 353);
+            buttonLogin.Location = new Point(466, 353);
             buttonLogin.Name = "buttonLogin";
             buttonLogin.Size = new Size(94, 29);
             buttonLogin.TabIndex = 8;

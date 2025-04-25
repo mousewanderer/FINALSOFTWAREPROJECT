@@ -29,11 +29,10 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            label1 = new Label();
-            NAME_LABEL = new Label();
-            Achievementslabel = new Label();
-            scoreofquizzes = new Label();
             Quizbot = new Label();
+            scoreofquizzes = new Label();
+            Achievementslabel = new Label();
+            NAME_LABEL = new Label();
             fileSystemWatcher1 = new FileSystemWatcher();
             LEVEL_label = new Label();
             num_quizzes = new Label();
@@ -53,33 +52,14 @@
             panel1.Size = new Size(277, 450);
             panel1.TabIndex = 0;
             // 
-            // label1
+            // Quizbot
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(303, 19);
-            label1.Name = "label1";
-            label1.Size = new Size(119, 20);
-            label1.TabIndex = 1;
-            label1.Text = "WELCOME BACK";
-            label1.Click += label1_Click;
-            // 
-            // NAME_LABEL
-            // 
-            NAME_LABEL.AutoSize = true;
-            NAME_LABEL.Location = new Point(449, 19);
-            NAME_LABEL.Name = "NAME_LABEL";
-            NAME_LABEL.Size = new Size(98, 20);
-            NAME_LABEL.TabIndex = 2;
-            NAME_LABEL.Text = "NAME_LABEL";
-            // 
-            // Achievementslabel
-            // 
-            Achievementslabel.AutoSize = true;
-            Achievementslabel.Location = new Point(27, 69);
-            Achievementslabel.Name = "Achievementslabel";
-            Achievementslabel.Size = new Size(101, 20);
-            Achievementslabel.TabIndex = 3;
-            Achievementslabel.Text = "Achievements";
+            Quizbot.AutoSize = true;
+            Quizbot.Location = new Point(27, 194);
+            Quizbot.Name = "Quizbot";
+            Quizbot.Size = new Size(62, 20);
+            Quizbot.TabIndex = 5;
+            Quizbot.Text = "Quizbot";
             // 
             // scoreofquizzes
             // 
@@ -90,14 +70,23 @@
             scoreofquizzes.TabIndex = 4;
             scoreofquizzes.Text = "Scores of Quizzes";
             // 
-            // Quizbot
+            // Achievementslabel
             // 
-            Quizbot.AutoSize = true;
-            Quizbot.Location = new Point(27, 194);
-            Quizbot.Name = "Quizbot";
-            Quizbot.Size = new Size(62, 20);
-            Quizbot.TabIndex = 5;
-            Quizbot.Text = "Quizbot";
+            Achievementslabel.AutoSize = true;
+            Achievementslabel.Location = new Point(27, 69);
+            Achievementslabel.Name = "Achievementslabel";
+            Achievementslabel.Size = new Size(101, 20);
+            Achievementslabel.TabIndex = 3;
+            Achievementslabel.Text = "Achievements";
+            // 
+            // NAME_LABEL
+            // 
+            NAME_LABEL.AutoSize = true;
+            NAME_LABEL.Location = new Point(312, 26);
+            NAME_LABEL.Name = "NAME_LABEL";
+            NAME_LABEL.Size = new Size(51, 20);
+            NAME_LABEL.TabIndex = 2;
+            NAME_LABEL.Text = "ddfdff";
             // 
             // fileSystemWatcher1
             // 
@@ -130,10 +119,10 @@
             Controls.Add(num_quizzes);
             Controls.Add(LEVEL_label);
             Controls.Add(NAME_LABEL);
-            Controls.Add(label1);
             Controls.Add(panel1);
             Name = "DASHBOARD_form";
             Text = "DASHBOARD_form";
+            Load += DASHBOARD_form_Load_1;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).EndInit();
@@ -147,7 +136,6 @@
         private Label Quizbot;
         private Label scoreofquizzes;
         private Label Achievementslabel;
-        private Label label1;
         private Label NAME_LABEL;
         private FileSystemWatcher fileSystemWatcher1;
         private Label LEVEL_label;
