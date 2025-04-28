@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,10 +18,14 @@ namespace SOFTDEV_FINAL_PROJECT
             InitializeComponent();
         }
 
+      
 
-        private void CREATE_form_load(object sender, EventArgs e)
 
+        private void CREATE_form_Load(object sender, EventArgs e)
         {
+
+        
+        
             // Add categories to the gender
             comboBoxGender.Items.Add("Male");
             comboBoxGender.Items.Add("Female");
@@ -92,7 +97,6 @@ namespace SOFTDEV_FINAL_PROJECT
 
 
 
-
             // Validate Age (Numeric only)
             if (string.IsNullOrEmpty(ageInput))
             {
@@ -156,6 +160,73 @@ namespace SOFTDEV_FINAL_PROJECT
 
 
             // saving mechanism
+
+            if (allowed)
+            {
+                try
+                {
+                    string connectionString = "Server=ASUS_2023;Database=Final_ProjectDB;Trusted_Connection=True";
+
+                    using (SqlConnection conn = new SqlConnection(connectionString))
+                    {
+                        conn.Open();
+
+
+
+                        // Generating ID student
+                        string getMaxIdQuery = "SELECT ISNULL(MAX(StudentID), 0) + 1 FROM Students";
+                        int newStudentId;
+
+                        using (SqlCommand getIdCmd = new SqlCommand(getMaxIdQuery, conn))
+                        {
+                            newStudentId = (int)getIdCmd.ExecuteScalar();
+                        }
+
+
+
+                        // INSERT into Students table (use manual StudentID)
+                        string insertStudentQuery = @"INSERT INTO Students (StudentID, FirstName, LastName, Age, Gender, Program, Username, KeyPassword)
+                              VALUES (@StudentID, @FirstName, @LastName, @Age, @Gender, @Program, @Username, @KeyPassword)";
+
+                        using (SqlCommand cmd = new SqlCommand(insertStudentQuery, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@StudentID", newStudentId); // Add this line
+                            cmd.Parameters.AddWithValue("@FirstName", firstname);
+                            cmd.Parameters.AddWithValue("@LastName", lastname);
+                            cmd.Parameters.AddWithValue("@Age", int.Parse(ageInput));
+                            cmd.Parameters.AddWithValue("@Gender", gender);
+                            cmd.Parameters.AddWithValue("@Program", program);
+                            cmd.Parameters.AddWithValue("@Username", username);
+                            cmd.Parameters.AddWithValue("@KeyPassword", password);
+
+                            cmd.ExecuteNonQuery(); // Execute insert into Students
+
+
+                                                   // Get the newly inserted user's ID
+
+
+                            // Now insert into Quizzes table with default values
+                            string insertScoreQuery = @"INSERT INTO Quizzes (StudentID, numquiz, Leveling, Math1, Math2, InfoTech1, InfoTech2, Biology1, Physics1)
+                                                VALUES (@StudentID, 0, 1, 0, 0, 0, 0, 0, 0)";
+
+                            using (SqlCommand quizCmd = new SqlCommand(insertScoreQuery, conn))
+                            {
+                                quizCmd.Parameters.AddWithValue("@StudentID", newStudentId);
+                                quizCmd.ExecuteNonQuery();
+                            }
+
+
+
+                            MessageBox.Show("User and quiz record created successfully!");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+
 
         }
 
@@ -270,5 +341,7 @@ namespace SOFTDEV_FINAL_PROJECT
         {
 
         }
+
+       
     }
 }

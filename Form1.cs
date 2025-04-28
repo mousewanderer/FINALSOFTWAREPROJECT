@@ -25,6 +25,7 @@ namespace SOFTDEV_FINAL_PROJECT
      
             CREATE_form createform = new CREATE_form();
             createform.Show();
+            this.Hide();
 
         }
 
@@ -66,9 +67,15 @@ namespace SOFTDEV_FINAL_PROJECT
 
                                         MessageBox.Show($"Login Successful! Welcome, {nameFromDB} (ID: {studentIdFromDB})", "Success");
 
-                                        // You must modify your DASHBOARD_form constructor to accept two arguments
+                                        // You must modify your userform  constructor to accept two arguments
+                                        User_Profile userform = new User_Profile(nameFromDB, studentIdFromDB);
+
                                         DASHBOARD_form dashForm = new DASHBOARD_form(nameFromDB, studentIdFromDB);
+
+
                                         dashForm.Show();
+
+
                                         this.Hide();
                                     }
                                     else

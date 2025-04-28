@@ -28,117 +28,142 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            Quizbot = new Label();
-            scoreofquizzes = new Label();
-            Achievementslabel = new Label();
-            NAME_LABEL = new Label();
             fileSystemWatcher1 = new FileSystemWatcher();
-            LEVEL_label = new Label();
-            num_quizzes = new Label();
-            panel1.SuspendLayout();
+            panel2 = new Panel();
+            Profile_button = new Button();
+            quizbotbutton = new Button();
+            AchievementsButton = new Button();
+            scoreofquizzesbutton = new Button();
+            SearchTextbox = new TextBox();
+            Search_button = new Button();
+            MAINPanel = new Panel();
+            sidepanel = new Panel();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
+            sidepanel.SuspendLayout();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.Silver;
-            panel1.Controls.Add(Quizbot);
-            panel1.Controls.Add(scoreofquizzes);
-            panel1.Controls.Add(Achievementslabel);
-            panel1.Dock = DockStyle.Left;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(277, 450);
-            panel1.TabIndex = 0;
-            // 
-            // Quizbot
-            // 
-            Quizbot.AutoSize = true;
-            Quizbot.Location = new Point(27, 194);
-            Quizbot.Name = "Quizbot";
-            Quizbot.Size = new Size(62, 20);
-            Quizbot.TabIndex = 5;
-            Quizbot.Text = "Quizbot";
-            // 
-            // scoreofquizzes
-            // 
-            scoreofquizzes.AutoSize = true;
-            scoreofquizzes.Location = new Point(27, 127);
-            scoreofquizzes.Name = "scoreofquizzes";
-            scoreofquizzes.Size = new Size(125, 20);
-            scoreofquizzes.TabIndex = 4;
-            scoreofquizzes.Text = "Scores of Quizzes";
-            // 
-            // Achievementslabel
-            // 
-            Achievementslabel.AutoSize = true;
-            Achievementslabel.Location = new Point(27, 69);
-            Achievementslabel.Name = "Achievementslabel";
-            Achievementslabel.Size = new Size(101, 20);
-            Achievementslabel.TabIndex = 3;
-            Achievementslabel.Text = "Achievements";
-            // 
-            // NAME_LABEL
-            // 
-            NAME_LABEL.AutoSize = true;
-            NAME_LABEL.Location = new Point(312, 26);
-            NAME_LABEL.Name = "NAME_LABEL";
-            NAME_LABEL.Size = new Size(51, 20);
-            NAME_LABEL.TabIndex = 2;
-            NAME_LABEL.Text = "ddfdff";
             // 
             // fileSystemWatcher1
             // 
             fileSystemWatcher1.EnableRaisingEvents = true;
             fileSystemWatcher1.SynchronizingObject = this;
             // 
-            // LEVEL_label
+            // panel2
             // 
-            LEVEL_label.AutoSize = true;
-            LEVEL_label.Location = new Point(303, 79);
-            LEVEL_label.Name = "LEVEL_label";
-            LEVEL_label.Size = new Size(133, 20);
-            LEVEL_label.TabIndex = 3;
-            LEVEL_label.Text = "YOU ARE LEVEL ___";
+            panel2.BackColor = SystemColors.ActiveCaption;
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1308, 38);
+            panel2.TabIndex = 10;
             // 
-            // num_quizzes
+            // Profile_button
             // 
-            num_quizzes.AutoSize = true;
-            num_quizzes.Location = new Point(312, 160);
-            num_quizzes.Name = "num_quizzes";
-            num_quizzes.Size = new Size(163, 20);
-            num_quizzes.TabIndex = 4;
-            num_quizzes.Text = "YOU HAVE QUIZZES ___";
+            Profile_button.Location = new Point(21, 107);
+            Profile_button.Name = "Profile_button";
+            Profile_button.Size = new Size(271, 64);
+            Profile_button.TabIndex = 7;
+            Profile_button.Text = "Profile";
+            Profile_button.UseVisualStyleBackColor = true;
+            Profile_button.Click += Profile_button_Click;
+            // 
+            // quizbotbutton
+            // 
+            quizbotbutton.Location = new Point(21, 247);
+            quizbotbutton.Name = "quizbotbutton";
+            quizbotbutton.Size = new Size(271, 73);
+            quizbotbutton.TabIndex = 5;
+            quizbotbutton.Text = "Quizbot";
+            quizbotbutton.UseVisualStyleBackColor = true;
+            quizbotbutton.Click += quizbotbutton_Click;
+            // 
+            // AchievementsButton
+            // 
+            AchievementsButton.Location = new Point(21, 177);
+            AchievementsButton.Name = "AchievementsButton";
+            AchievementsButton.Size = new Size(271, 64);
+            AchievementsButton.TabIndex = 5;
+            AchievementsButton.Text = "Achievements";
+            AchievementsButton.UseVisualStyleBackColor = true;
+            AchievementsButton.Click += AchievementsButton_Click;
+            // 
+            // scoreofquizzesbutton
+            // 
+            scoreofquizzesbutton.Location = new Point(21, 373);
+            scoreofquizzesbutton.Name = "scoreofquizzesbutton";
+            scoreofquizzesbutton.Size = new Size(271, 64);
+            scoreofquizzesbutton.TabIndex = 6;
+            scoreofquizzesbutton.Text = "Quizzes???";
+            scoreofquizzesbutton.UseVisualStyleBackColor = true;
+            // 
+            // SearchTextbox
+            // 
+            SearchTextbox.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SearchTextbox.Location = new Point(106, 38);
+            SearchTextbox.Name = "SearchTextbox";
+            SearchTextbox.Size = new Size(170, 43);
+            SearchTextbox.TabIndex = 5;
+            // 
+            // Search_button
+            // 
+            Search_button.Location = new Point(13, 16);
+            Search_button.Name = "Search_button";
+            Search_button.Size = new Size(72, 65);
+            Search_button.TabIndex = 5;
+            Search_button.Text = "Search";
+            Search_button.UseVisualStyleBackColor = true;
+            // 
+            // MAINPanel
+            // 
+            MAINPanel.BackColor = Color.Silver;
+            MAINPanel.Location = new Point(339, 76);
+            MAINPanel.Name = "MAINPanel";
+            MAINPanel.Size = new Size(943, 500);
+            MAINPanel.TabIndex = 0;
+            // 
+            // sidepanel
+            // 
+            sidepanel.BackColor = Color.Coral;
+            sidepanel.Controls.Add(Profile_button);
+            sidepanel.Controls.Add(scoreofquizzesbutton);
+            sidepanel.Controls.Add(AchievementsButton);
+            sidepanel.Controls.Add(SearchTextbox);
+            sidepanel.Controls.Add(quizbotbutton);
+            sidepanel.Controls.Add(Search_button);
+            sidepanel.Dock = DockStyle.Left;
+            sidepanel.Location = new Point(0, 38);
+            sidepanel.Name = "sidepanel";
+            sidepanel.Size = new Size(309, 572);
+            sidepanel.TabIndex = 11;
             // 
             // DASHBOARD_form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1308, 450);
-            Controls.Add(num_quizzes);
-            Controls.Add(LEVEL_label);
-            Controls.Add(NAME_LABEL);
-            Controls.Add(panel1);
+            BackColor = SystemColors.ControlLight;
+            ClientSize = new Size(1308, 610);
+            Controls.Add(sidepanel);
+            Controls.Add(panel2);
+            Controls.Add(MAINPanel);
+            FormBorderStyle = FormBorderStyle.SizableToolWindow;
             Name = "DASHBOARD_form";
             Text = "DASHBOARD_form";
             Load += DASHBOARD_form_Load_1;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).EndInit();
+            sidepanel.ResumeLayout(false);
+            sidepanel.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Panel panel1;
-        private Label Quizbot;
-        private Label scoreofquizzes;
-        private Label Achievementslabel;
-        private Label NAME_LABEL;
         private FileSystemWatcher fileSystemWatcher1;
-        private Label LEVEL_label;
-        private Label num_quizzes;
+        private Panel panel2;
+        private Panel MAINPanel;
+        private Button Profile_button;
+        private TextBox SearchTextbox;
+        private Button Search_button;
+        private Button quizbotbutton;
+        private Button scoreofquizzesbutton;
+        private Button AchievementsButton;
+        private Panel sidepanel;
     }
 }

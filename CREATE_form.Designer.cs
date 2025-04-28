@@ -70,6 +70,7 @@
             comboBoxGender.Name = "comboBoxGender";
             comboBoxGender.Size = new Size(183, 28);
             comboBoxGender.TabIndex = 3;
+            comboBoxGender.SelectedIndexChanged += comboBoxProgram_SelectedIndexChanged;
             // 
             // NAME_label
             // 
@@ -245,6 +246,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "CREATE_form";
             Text = "CREATE_form";
+            Load += CREATE_form_Load;
             ResumeLayout(false);
             PerformLayout();
         }

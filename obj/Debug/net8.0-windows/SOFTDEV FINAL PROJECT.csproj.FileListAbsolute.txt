@@ -24,3 +24,6 @@ C:\Users\melwi\OneDrive\Desktop\FINAL PROJECT\SOFTDEV FINAL PROJECT\bin\Debug\ne
 C:\Users\melwi\OneDrive\Desktop\FINAL PROJECT\SOFTDEV FINAL PROJECT\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Data.SqlClient.dll
 C:\Users\melwi\OneDrive\Desktop\FINAL PROJECT\SOFTDEV FINAL PROJECT\obj\Debug\net8.0-windows\SOFTDEV FINAL PROJECT.csproj.AssemblyReference.cache
 C:\Users\melwi\OneDrive\Desktop\FINAL PROJECT\SOFTDEV FINAL PROJECT\obj\Debug\net8.0-windows\SOFTDEV .C32401F4.Up2Date
+C:\Users\melwi\OneDrive\Desktop\FINAL PROJECT\SOFTDEV FINAL PROJECT\obj\Debug\net8.0-windows\SOFTDEV_FINAL_PROJECT.Achievements.resources
+C:\Users\melwi\OneDrive\Desktop\FINAL PROJECT\SOFTDEV FINAL PROJECT\obj\Debug\net8.0-windows\SOFTDEV_FINAL_PROJECT.Quizbot.resources
+C:\Users\melwi\OneDrive\Desktop\FINAL PROJECT\SOFTDEV FINAL PROJECT\obj\Debug\net8.0-windows\SOFTDEV_FINAL_PROJECT.User_Profile.resources
