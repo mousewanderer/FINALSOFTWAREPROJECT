@@ -12,8 +12,8 @@ Incorporates RPG elements like leveling up, badges, and achievements, making lea
 
 # Objectives
 
-- Login user page (login and create account) (we can use our activity 8 and swap out the login with the create acccount and quit as login )
-- LMS dashboard (student) (LVL, subject taken, scores from the previous quizzes and achievements) 
+- Login user page (login and create account) ------------- (DONE)
+- LMS dashboard (student) (LVL, subject taken, scores from the previous quizzes and achievements) ------------- (On progress)
 - Quizbot itself (Multiple choice and time bounded (count down system) and the multiple choice and questions swaps every time)
 
 
@@ -26,7 +26,7 @@ Advanced Features:
  View Student Progress
  Manage Subjects
 
-(HELP)
+(Why did I loss my core alliance at senior high school ) 
 
 
 
