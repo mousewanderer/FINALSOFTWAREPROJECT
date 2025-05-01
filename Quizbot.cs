@@ -16,5 +16,10 @@ namespace SOFTDEV_FINAL_PROJECT
         {
             InitializeComponent();
         }
+
+        private void Math1button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

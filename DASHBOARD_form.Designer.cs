@@ -30,6 +30,7 @@
         {
             fileSystemWatcher1 = new FileSystemWatcher();
             panel2 = new Panel();
+            Backbutto = new Button();
             Profile_button = new Button();
             quizbotbutton = new Button();
             AchievementsButton = new Button();
@@ -39,6 +40,7 @@
             MAINPanel = new Panel();
             sidepanel = new Panel();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
+            panel2.SuspendLayout();
             sidepanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -50,11 +52,22 @@
             // panel2
             // 
             panel2.BackColor = SystemColors.ActiveCaption;
+            panel2.Controls.Add(Backbutto);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1308, 38);
+            panel2.Size = new Size(1382, 38);
             panel2.TabIndex = 10;
+            // 
+            // Backbutto
+            // 
+            Backbutto.Location = new Point(1248, 6);
+            Backbutto.Name = "Backbutto";
+            Backbutto.Size = new Size(94, 29);
+            Backbutto.TabIndex = 0;
+            Backbutto.Text = "Back";
+            Backbutto.UseVisualStyleBackColor = true;
+            Backbutto.Click += Backbutto_Click;
             // 
             // Profile_button
             // 
@@ -88,7 +101,7 @@
             // 
             // scoreofquizzesbutton
             // 
-            scoreofquizzesbutton.Location = new Point(21, 373);
+            scoreofquizzesbutton.Location = new Point(21, 326);
             scoreofquizzesbutton.Name = "scoreofquizzesbutton";
             scoreofquizzesbutton.Size = new Size(271, 64);
             scoreofquizzesbutton.TabIndex = 6;
@@ -98,16 +111,16 @@
             // SearchTextbox
             // 
             SearchTextbox.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            SearchTextbox.Location = new Point(106, 38);
+            SearchTextbox.Location = new Point(90, 436);
             SearchTextbox.Name = "SearchTextbox";
-            SearchTextbox.Size = new Size(170, 43);
+            SearchTextbox.Size = new Size(202, 43);
             SearchTextbox.TabIndex = 5;
             // 
             // Search_button
             // 
-            Search_button.Location = new Point(13, 16);
+            Search_button.Location = new Point(12, 431);
             Search_button.Name = "Search_button";
-            Search_button.Size = new Size(72, 65);
+            Search_button.Size = new Size(72, 48);
             Search_button.TabIndex = 5;
             Search_button.Text = "Search";
             Search_button.UseVisualStyleBackColor = true;
@@ -117,7 +130,7 @@
             MAINPanel.BackColor = Color.Silver;
             MAINPanel.Location = new Point(339, 76);
             MAINPanel.Name = "MAINPanel";
-            MAINPanel.Size = new Size(943, 500);
+            MAINPanel.Size = new Size(1003, 537);
             MAINPanel.TabIndex = 0;
             // 
             // sidepanel
@@ -132,7 +145,7 @@
             sidepanel.Dock = DockStyle.Left;
             sidepanel.Location = new Point(0, 38);
             sidepanel.Name = "sidepanel";
-            sidepanel.Size = new Size(309, 572);
+            sidepanel.Size = new Size(309, 648);
             sidepanel.TabIndex = 11;
             // 
             // DASHBOARD_form
@@ -140,7 +153,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
-            ClientSize = new Size(1308, 610);
+            ClientSize = new Size(1382, 686);
             Controls.Add(sidepanel);
             Controls.Add(panel2);
             Controls.Add(MAINPanel);
@@ -149,6 +162,7 @@
             Text = "DASHBOARD_form";
             Load += DASHBOARD_form_Load_1;
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).EndInit();
+            panel2.ResumeLayout(false);
             sidepanel.ResumeLayout(false);
             sidepanel.PerformLayout();
             ResumeLayout(false);
@@ -165,5 +179,6 @@
         private Button scoreofquizzesbutton;
         private Button AchievementsButton;
         private Panel sidepanel;
+        private Button Backbutto;
     }
 }

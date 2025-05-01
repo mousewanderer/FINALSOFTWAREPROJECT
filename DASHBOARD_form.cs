@@ -58,7 +58,7 @@ namespace SOFTDEV_FINAL_PROJECT
 
 
 
-        
+
 
 
 
@@ -80,6 +80,15 @@ namespace SOFTDEV_FINAL_PROJECT
         {
             LoadForm(new Quizbot());
 
+        }
+
+        private void Backbutto_Click(object sender, EventArgs e)
+        {
+            // Redirect to Login Form
+            // Redirect to Login Form
+            LOGINFORM loginForm = new LOGINFORM();
+            loginForm.Show();
+            this.Close(); // Close the Profile Form
         }
     }
 }

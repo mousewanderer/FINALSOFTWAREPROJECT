@@ -19,53 +19,70 @@ namespace SOFTDEV_FINAL_PROJECT
 
     {
 
-        private string studentName;
+        private string studentFirstName;
         private string studentID;
+        private string studentLastName;
 
 
-       
+
         public User_Profile(string name, string id)
         {
             InitializeComponent();
         
-            studentName = name;
+            studentFirstName = name;
             studentID = id;
         }
 
 
         private void User_Profile_Load(object sender, EventArgs e)
         {
-            // ---------------------------------------------------------------
-
-            NAME_LABEL.Text = $"Welcome, {studentName} (ID: {studentID})";
-
+            NAME_LABEL.Text = $"Welcome, {studentFirstName} (ID: {studentID})";
 
             using (SqlConnection conn = new SqlConnection("Server=ASUS_2023;Database=Final_ProjectDB;Trusted_Connection=True;"))
             {
-
                 conn.Open();
 
-                string query = "SELECT numquiz, Leveling FROM Quizzes WHERE StudentID = @ID";
+                // FIRST QUERY: Get quiz and level info
+                string query1 = "SELECT numquiz, Leveling FROM Quizzes WHERE StudentID = @ID";
 
-                using (SqlCommand cmd = new SqlCommand(query, conn))
+                using (SqlCommand cmd1 = new SqlCommand(query1, conn))
                 {
-                    cmd.Parameters.AddWithValue("@ID", studentID);
+                    cmd1.Parameters.AddWithValue("@ID", studentID);
 
-
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    using (SqlDataReader reader1 = cmd1.ExecuteReader())
                     {
-                        if (reader.Read())
+                        if (reader1.Read())
                         {
-                            num_quizzes.Text = $"Your quizzes are {reader["numquiz"].ToString()}   ";
-                            LEVEL_label.Text = $"Your level is {reader["Leveling"].ToString()}   ";
+                            num_quizzes.Text = $"Your quizzes are {reader1["numquiz"].ToString()}";
+                            LEVEL_label.Text = $"Your level is {reader1["Leveling"].ToString()}";
+                            Firstname.Text = $"FIRST NAME: {studentFirstName}";
                         }
-
                     }
-
                 }
 
+                // SECOND QUERY: Get personal info
+                string query2 = "SELECT LastName, Age, Gender, Program, Username FROM Students WHERE StudentID = @ID";
 
+                using (SqlCommand cmd2 = new SqlCommand(query2, conn))
+                {
+                    cmd2.Parameters.AddWithValue("@ID", studentID);
+
+                    using (SqlDataReader reader2 = cmd2.ExecuteReader())
+                    {
+                        if (reader2.Read())
+                        {
+                            lastname.Text = $"LAST NAME: {reader2["LastName"].ToString()}";
+                            Agelabel.Text = $"AGE: {reader2["Age"].ToString()}";
+                            Gender.Text = $"GENDER: {reader2["Gender"].ToString()}";
+                            CourseLabel.Text = $"Program: {reader2["Program"].ToString()}";
+                            Usernamelabel.Text = $"Username: {reader2["Username"].ToString()}"; // corrected to Username
+                        }
+                    }
+                }
             }
+
+
+            //---------------------------------------------------------------
 
 
 
