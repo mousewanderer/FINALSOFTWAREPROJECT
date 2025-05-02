@@ -28,6 +28,11 @@ Advanced Features:
 
 (Why did I loss my core alliance at senior high school ) 
 
+Nugets I add
+- CLOSEDXML for excel 
+- SQLDATACLIENT for sql
+ 
+
 
 
 
