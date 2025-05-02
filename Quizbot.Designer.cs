@@ -47,6 +47,7 @@
             Physics1panel = new Panel();
             Physics1 = new Label();
             Physics1button = new Button();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             mathpanel1.SuspendLayout();
             mathpanel2.SuspendLayout();
             Infotechpanel1.SuspendLayout();
@@ -79,6 +80,7 @@
             // 
             // mathpanel1
             // 
+            mathpanel1.BackColor = Color.AntiqueWhite;
             mathpanel1.Controls.Add(Math1);
             mathpanel1.Controls.Add(Math1button);
             mathpanel1.Location = new Point(62, 77);
@@ -112,6 +114,7 @@
             Math2button.TabIndex = 1;
             Math2button.Text = "Ready";
             Math2button.UseVisualStyleBackColor = true;
+            Math2button.Click += Math2button_Click;
             // 
             // InfoTech1
             // 
@@ -130,9 +133,11 @@
             InfoTech1button.TabIndex = 1;
             InfoTech1button.Text = "Ready";
             InfoTech1button.UseVisualStyleBackColor = true;
+            InfoTech1button.Click += InfoTech1button_Click;
             // 
             // mathpanel2
             // 
+            mathpanel2.BackColor = Color.AntiqueWhite;
             mathpanel2.Controls.Add(Math2);
             mathpanel2.Controls.Add(Math2button);
             mathpanel2.Location = new Point(229, 77);
@@ -142,6 +147,7 @@
             // 
             // Infotechpanel1
             // 
+            Infotechpanel1.BackColor = SystemColors.ActiveCaption;
             Infotechpanel1.Controls.Add(InfoTech1);
             Infotechpanel1.Controls.Add(InfoTech1button);
             Infotechpanel1.Location = new Point(406, 77);
@@ -151,6 +157,7 @@
             // 
             // InfoTech2panel
             // 
+            InfoTech2panel.BackColor = Color.AntiqueWhite;
             InfoTech2panel.Controls.Add(InfoTech2);
             InfoTech2panel.Controls.Add(InfoTech2button);
             InfoTech2panel.Location = new Point(62, 256);
@@ -175,9 +182,11 @@
             InfoTech2button.TabIndex = 1;
             InfoTech2button.Text = "Ready";
             InfoTech2button.UseVisualStyleBackColor = true;
+            InfoTech2button.Click += InfoTech2button_Click;
             // 
             // Biology1panel
             // 
+            Biology1panel.BackColor = Color.AntiqueWhite;
             Biology1panel.Controls.Add(Biology1);
             Biology1panel.Controls.Add(Biology1button);
             Biology1panel.Location = new Point(229, 256);
@@ -202,9 +211,11 @@
             Biology1button.TabIndex = 1;
             Biology1button.Text = "Ready";
             Biology1button.UseVisualStyleBackColor = true;
+            Biology1button.Click += Biology1button_Click;
             // 
             // Physics1panel
             // 
+            Physics1panel.BackColor = Color.AntiqueWhite;
             Physics1panel.Controls.Add(Physics1);
             Physics1panel.Controls.Add(Physics1button);
             Physics1panel.Location = new Point(406, 256);
@@ -229,6 +240,7 @@
             Physics1button.TabIndex = 1;
             Physics1button.Text = "Ready";
             Physics1button.UseVisualStyleBackColor = true;
+            Physics1button.Click += Physics1button_Click;
             // 
             // Quizbot
             // 
@@ -245,6 +257,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Quizbot";
             Text = "Quizbot";
+            Load += Quizbot_Load;
             mathpanel1.ResumeLayout(false);
             mathpanel1.PerformLayout();
             mathpanel2.ResumeLayout(false);
@@ -282,5 +295,6 @@
         private Panel Physics1panel;
         private Label Physics1;
         private Button Physics1button;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

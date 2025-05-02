@@ -13,6 +13,9 @@
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="questionnaire.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Quizbot.cs">
       <SubType>Form</SubType>
     </Compile>
