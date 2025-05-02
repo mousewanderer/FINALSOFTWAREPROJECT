@@ -138,7 +138,10 @@ VALUES
 -- Admin for easy debug
 (25, 'Admin', 'windy', 20, 'Male', 'Quantum Physics', 'm', 'm');
 GO
-select * from Students```
+select * from Students
+
+
+```
 
 
 
