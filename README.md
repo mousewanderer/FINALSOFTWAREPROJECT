@@ -46,17 +46,13 @@ version 1
 // SQL commands
 
 
-
+```cd Discord-chat-bot-sample.py
 USE Final_projectDB; 
  GO
 
-
  
-DROP TABLE dbo.Students;
- 
-
+DROP TABLE dbo.Students; 
 DROP TABLE dbo.Quizzes;
-
 
  
  CREATE TABLE Students ( 
@@ -141,11 +137,8 @@ VALUES
 (24, 'Bon', 'Clay', 30, 'LGBTQA', 'Performing Arts', 'OkamaWay', 'SwanDance1A'),
 -- Admin for easy debug
 (25, 'Admin', 'windy', 20, 'Male', 'Quantum Physics', 'm', 'm');
-
 GO
-
-
-select * from Students
+select * from Students```
 
 
 
