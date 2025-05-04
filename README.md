@@ -12,7 +12,7 @@ Incorporates RPG elements like leveling up, badges, and achievements, making lea
 
 # Objectives
 
-- Login user page (login and create account) ------------- (DONE)
+- Login user page (login and create account) ------------- (DONE) oh well
 - LMS dashboard (student) (LVL, subject taken, scores from the previous quizzes and achievements) ------------- (On progress)
 - Quizbot itself (Multiple choice and time bounded (count down system) and the multiple choice and questions swaps every time)
 
