@@ -26,7 +26,6 @@ Advanced Features:
  View Student Progress
  Manage Subjects
 
-(Why did I loss my core alliance at senior high school ) 
 
 Nugets I add
 - CLOSEDXML for excel 
