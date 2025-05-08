@@ -34,7 +34,7 @@
             Profile_button = new Button();
             quizbotbutton = new Button();
             AchievementsButton = new Button();
-            scoreofquizzesbutton = new Button();
+            Rankingbutton = new Button();
             SearchTextbox = new TextBox();
             Search_button = new Button();
             MAINPanel = new Panel();
@@ -99,14 +99,15 @@
             AchievementsButton.UseVisualStyleBackColor = true;
             AchievementsButton.Click += AchievementsButton_Click;
             // 
-            // scoreofquizzesbutton
+            // Rankingbutton
             // 
-            scoreofquizzesbutton.Location = new Point(21, 326);
-            scoreofquizzesbutton.Name = "scoreofquizzesbutton";
-            scoreofquizzesbutton.Size = new Size(271, 64);
-            scoreofquizzesbutton.TabIndex = 6;
-            scoreofquizzesbutton.Text = "Quizzes???";
-            scoreofquizzesbutton.UseVisualStyleBackColor = true;
+            Rankingbutton.Location = new Point(21, 326);
+            Rankingbutton.Name = "Rankingbutton";
+            Rankingbutton.Size = new Size(271, 64);
+            Rankingbutton.TabIndex = 6;
+            Rankingbutton.Text = "Ranking";
+            Rankingbutton.UseVisualStyleBackColor = true;
+            Rankingbutton.Click += Rankingbutton_Click;
             // 
             // SearchTextbox
             // 
@@ -137,7 +138,7 @@
             // 
             sidepanel.BackColor = Color.Coral;
             sidepanel.Controls.Add(Profile_button);
-            sidepanel.Controls.Add(scoreofquizzesbutton);
+            sidepanel.Controls.Add(Rankingbutton);
             sidepanel.Controls.Add(AchievementsButton);
             sidepanel.Controls.Add(SearchTextbox);
             sidepanel.Controls.Add(quizbotbutton);
@@ -176,7 +177,7 @@
         private TextBox SearchTextbox;
         private Button Search_button;
         private Button quizbotbutton;
-        private Button scoreofquizzesbutton;
+        private Button Rankingbutton;
         private Button AchievementsButton;
         private Panel sidepanel;
         private Button Backbutto;

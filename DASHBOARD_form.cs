@@ -37,7 +37,7 @@ namespace SOFTDEV_FINAL_PROJECT
 
         private void DASHBOARD_form_Load_1(object sender, EventArgs e)
         {
-
+            LoadForm(new User_Profile(studentName, studentID));
 
 
         }
@@ -89,6 +89,11 @@ namespace SOFTDEV_FINAL_PROJECT
             LOGINFORM loginForm = new LOGINFORM();
             loginForm.Show();
             this.Close(); // Close the Profile Form
+        }
+
+        private void Rankingbutton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

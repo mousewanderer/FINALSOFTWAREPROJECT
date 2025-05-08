@@ -36,3 +36,4 @@ C:\Users\melwi\OneDrive\Desktop\FINAL PROJECT\SOFTDEV FINAL PROJECT\bin\Debug\ne
 C:\Users\melwi\OneDrive\Desktop\FINAL PROJECT\SOFTDEV FINAL PROJECT\bin\Debug\net8.0-windows\RBush.dll
 C:\Users\melwi\OneDrive\Desktop\FINAL PROJECT\SOFTDEV FINAL PROJECT\bin\Debug\net8.0-windows\SixLabors.Fonts.dll
 C:\Users\melwi\OneDrive\Desktop\FINAL PROJECT\SOFTDEV FINAL PROJECT\bin\Debug\net8.0-windows\System.IO.Packaging.dll
+C:\Users\melwi\OneDrive\Desktop\FINAL PROJECT\SOFTDEV FINAL PROJECT\obj\Debug\net8.0-windows\SOFTDEV_FINAL_PROJECT.Properties.Resources.resources
