@@ -19,6 +19,9 @@
     <Compile Update="Quizbot.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="RANKING.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="User_Profile.cs">
       <SubType>Form</SubType>
     </Compile>

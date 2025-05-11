@@ -72,13 +72,13 @@ namespace SOFTDEV_FINAL_PROJECT
 
         private void AchievementsButton_Click(object sender, EventArgs e)
         {
-            LoadForm(new Achievements());
+            LoadForm(new Achievements(studentName, studentID));
 
         }
 
         private void quizbotbutton_Click(object sender, EventArgs e)
         {
-            LoadForm(new Quizbot());
+            LoadForm(new Quizbot(studentName, studentID));
 
         }
 

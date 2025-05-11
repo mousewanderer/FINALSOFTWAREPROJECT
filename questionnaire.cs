@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
@@ -16,18 +17,31 @@ namespace SOFTDEV_FINAL_PROJECT
     public partial class questionnaire : Form
     {
 
-        private string filelocate;
+        private string CURRENT_QUIZ;
 
-        public questionnaire(string locate)
+        private string studentName;
+        private string studentID;
+        private string quizColumn = "";
+
+
+        public questionnaire(string locate, string name, string id)
         {
+
+            studentName = name;
+            studentID = id;
             InitializeComponent();
-            filelocate = locate;
+            CURRENT_QUIZ = locate;
         }
+
+
+
+       
+
 
         private void questionnaire_Load(object sender, EventArgs e)
         {
 
-            questions = LoadQuestions(filelocate);
+            questions = LoadQuestions(CURRENT_QUIZ);
             Shuffle(questions);
             DisplayQuestion();
         }
@@ -166,7 +180,25 @@ namespace SOFTDEV_FINAL_PROJECT
             {
                 MessageBox.Show($"🎉 Quiz completed!\nYour score: {score}/{questions.Count}", "Finished");
 
-                Quizbot quiz = new Quizbot();
+
+                if (CURRENT_QUIZ == "Math1_Quiz.xlsx") quizColumn = "Math1";
+                else if (CURRENT_QUIZ == "Math2_Quiz.xlsx") quizColumn = "Math2";
+                else if (CURRENT_QUIZ == "InfoTech1_Quiz.xlsx") quizColumn = "InfoTech1";
+                else if (CURRENT_QUIZ == "InfoTech2_Quiz.xlsx") quizColumn = "InfoTech2";
+                else if (CURRENT_QUIZ == "Biology1_Quiz.xlsx") quizColumn = "Biology1";
+                else if (CURRENT_QUIZ == "Physics1_Quiz.xlsx") quizColumn = "Physics1";
+
+                else
+                {
+                    MessageBox.Show("Unknown quiz type. Cannot save.");
+                    return;
+                }
+
+                SaveQuizScoreToDatabase(quizColumn, score);
+
+
+
+                Quizbot quiz = new Quizbot(studentName, studentID);
 
                 
 
@@ -174,5 +206,54 @@ namespace SOFTDEV_FINAL_PROJECT
                 
             }
         }
+
+
+
+        private void SaveQuizScoreToDatabase(string quizColumn, int score)
+        {
+            string connectionString = "Server=localhost;Database=Final_projectDB;Trusted_Connection=True;";
+
+            // Only level up if score >= 8
+            string query;
+            if (score >= 8)
+            {
+                query = $@"
+            UPDATE Quizzes 
+            SET {quizColumn} = @Score, 
+                numquiz = numquiz + 1,
+                Leveling = Leveling + 1
+            WHERE StudentID = @StudentID";
+            }
+            else
+            {
+                query = $@"
+            UPDATE Quizzes 
+            SET {quizColumn} = @Score, 
+                numquiz = numquiz + 1
+            WHERE StudentID = @StudentID";
+            }
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Score", score);
+                    cmd.Parameters.AddWithValue("@StudentID", studentID);
+                    conn.Open();
+                    int rows = cmd.ExecuteNonQuery();
+                    if (rows == 0)
+                    {
+                        MessageBox.Show("Failed to update score. Student ID may not exist.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error saving score: " + ex.Message);
+            }
         }
+
+
+    }
     }

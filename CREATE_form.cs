@@ -207,7 +207,7 @@ namespace SOFTDEV_FINAL_PROJECT
 
                             // Now insert into Quizzes table with default values
                             string insertScoreQuery = @"INSERT INTO Quizzes (StudentID, numquiz, Leveling, Math1, Math2, InfoTech1, InfoTech2, Biology1, Physics1)
-                                                VALUES (@StudentID, 0, 1, 0, 0, 0, 0, 0, 0)";
+                                                VALUES (@StudentID, -1, 1, -1, -1, -1, -1, -1, -1)";
 
                             using (SqlCommand quizCmd = new SqlCommand(insertScoreQuery, conn))
                             {

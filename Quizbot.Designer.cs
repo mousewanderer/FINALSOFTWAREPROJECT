@@ -31,20 +31,26 @@
             label1 = new Label();
             Math1button = new Button();
             mathpanel1 = new Panel();
+            MATH1SCORE = new Label();
             Math1 = new Label();
             Math2 = new Label();
             Math2button = new Button();
             InfoTech1 = new Label();
             InfoTech1button = new Button();
             mathpanel2 = new Panel();
+            MATH2SCORE = new Label();
             Infotechpanel1 = new Panel();
+            INFO1SCORE = new Label();
             InfoTech2panel = new Panel();
-            InfoTech2 = new Label();
+            INFO2SCORE = new Label();
             InfoTech2button = new Button();
+            InfoTech2 = new Label();
             Biology1panel = new Panel();
-            Biology1 = new Label();
+            BIO1SCORE = new Label();
             Biology1button = new Button();
+            Biology1 = new Label();
             Physics1panel = new Panel();
+            PHY1SCORE = new Label();
             Physics1 = new Label();
             Physics1button = new Button();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -70,7 +76,7 @@
             // 
             // Math1button
             // 
-            Math1button.Location = new Point(19, 87);
+            Math1button.Location = new Point(19, 106);
             Math1button.Name = "Math1button";
             Math1button.Size = new Size(94, 29);
             Math1button.TabIndex = 1;
@@ -80,7 +86,8 @@
             // 
             // mathpanel1
             // 
-            mathpanel1.BackColor = Color.AntiqueWhite;
+            mathpanel1.BackColor = Color.LightSalmon;
+            mathpanel1.Controls.Add(MATH1SCORE);
             mathpanel1.Controls.Add(Math1);
             mathpanel1.Controls.Add(Math1button);
             mathpanel1.Location = new Point(62, 77);
@@ -88,27 +95,40 @@
             mathpanel1.Size = new Size(128, 138);
             mathpanel1.TabIndex = 2;
             // 
+            // MATH1SCORE
+            // 
+            MATH1SCORE.AutoSize = true;
+            MATH1SCORE.Font = new Font("Segoe UI", 12F);
+            MATH1SCORE.Location = new Point(19, 75);
+            MATH1SCORE.Name = "MATH1SCORE";
+            MATH1SCORE.Size = new Size(53, 28);
+            MATH1SCORE.TabIndex = 9;
+            MATH1SCORE.Text = "1/15";
+            MATH1SCORE.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // Math1
             // 
             Math1.AutoSize = true;
-            Math1.Location = new Point(41, 30);
+            Math1.Font = new Font("Segoe UI", 12F);
+            Math1.Location = new Point(19, 47);
             Math1.Name = "Math1";
-            Math1.Size = new Size(51, 20);
+            Math1.Size = new Size(69, 28);
             Math1.TabIndex = 3;
             Math1.Text = "Math1";
             // 
             // Math2
             // 
             Math2.AutoSize = true;
-            Math2.Location = new Point(37, 30);
+            Math2.Font = new Font("Segoe UI", 12F);
+            Math2.Location = new Point(20, 47);
             Math2.Name = "Math2";
-            Math2.Size = new Size(51, 20);
+            Math2.Size = new Size(69, 28);
             Math2.TabIndex = 3;
             Math2.Text = "Math2";
             // 
             // Math2button
             // 
-            Math2button.Location = new Point(14, 96);
+            Math2button.Location = new Point(20, 106);
             Math2button.Name = "Math2button";
             Math2button.Size = new Size(94, 29);
             Math2button.TabIndex = 1;
@@ -119,15 +139,16 @@
             // InfoTech1
             // 
             InfoTech1.AutoSize = true;
-            InfoTech1.Location = new Point(31, 30);
+            InfoTech1.Font = new Font("Segoe UI", 12F);
+            InfoTech1.Location = new Point(19, 47);
             InfoTech1.Name = "InfoTech1";
-            InfoTech1.Size = new Size(73, 20);
+            InfoTech1.Size = new Size(95, 28);
             InfoTech1.TabIndex = 3;
             InfoTech1.Text = "InfoTech1";
             // 
             // InfoTech1button
             // 
-            InfoTech1button.Location = new Point(20, 96);
+            InfoTech1button.Location = new Point(20, 106);
             InfoTech1button.Name = "InfoTech1button";
             InfoTech1button.Size = new Size(94, 29);
             InfoTech1button.TabIndex = 1;
@@ -137,7 +158,8 @@
             // 
             // mathpanel2
             // 
-            mathpanel2.BackColor = Color.AntiqueWhite;
+            mathpanel2.BackColor = Color.LightSalmon;
+            mathpanel2.Controls.Add(MATH2SCORE);
             mathpanel2.Controls.Add(Math2);
             mathpanel2.Controls.Add(Math2button);
             mathpanel2.Location = new Point(229, 77);
@@ -145,38 +167,64 @@
             mathpanel2.Size = new Size(128, 138);
             mathpanel2.TabIndex = 4;
             // 
+            // MATH2SCORE
+            // 
+            MATH2SCORE.AutoSize = true;
+            MATH2SCORE.Font = new Font("Segoe UI", 12F);
+            MATH2SCORE.Location = new Point(20, 75);
+            MATH2SCORE.Name = "MATH2SCORE";
+            MATH2SCORE.Size = new Size(53, 28);
+            MATH2SCORE.TabIndex = 10;
+            MATH2SCORE.Text = "1/15";
+            MATH2SCORE.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // Infotechpanel1
             // 
-            Infotechpanel1.BackColor = SystemColors.ActiveCaption;
-            Infotechpanel1.Controls.Add(InfoTech1);
+            Infotechpanel1.BackColor = Color.FromArgb(128, 255, 255);
             Infotechpanel1.Controls.Add(InfoTech1button);
+            Infotechpanel1.Controls.Add(INFO1SCORE);
+            Infotechpanel1.Controls.Add(InfoTech1);
             Infotechpanel1.Location = new Point(406, 77);
             Infotechpanel1.Name = "Infotechpanel1";
             Infotechpanel1.Size = new Size(128, 138);
             Infotechpanel1.TabIndex = 5;
             // 
+            // INFO1SCORE
+            // 
+            INFO1SCORE.AutoSize = true;
+            INFO1SCORE.Font = new Font("Segoe UI", 12F);
+            INFO1SCORE.Location = new Point(19, 75);
+            INFO1SCORE.Name = "INFO1SCORE";
+            INFO1SCORE.Size = new Size(53, 28);
+            INFO1SCORE.TabIndex = 11;
+            INFO1SCORE.Text = "1/15";
+            INFO1SCORE.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // InfoTech2panel
             // 
-            InfoTech2panel.BackColor = Color.AntiqueWhite;
-            InfoTech2panel.Controls.Add(InfoTech2);
+            InfoTech2panel.BackColor = Color.FromArgb(128, 255, 255);
+            InfoTech2panel.Controls.Add(INFO2SCORE);
             InfoTech2panel.Controls.Add(InfoTech2button);
+            InfoTech2panel.Controls.Add(InfoTech2);
             InfoTech2panel.Location = new Point(62, 256);
             InfoTech2panel.Name = "InfoTech2panel";
             InfoTech2panel.Size = new Size(128, 138);
             InfoTech2panel.TabIndex = 6;
             // 
-            // InfoTech2
+            // INFO2SCORE
             // 
-            InfoTech2.AutoSize = true;
-            InfoTech2.Location = new Point(31, 30);
-            InfoTech2.Name = "InfoTech2";
-            InfoTech2.Size = new Size(73, 20);
-            InfoTech2.TabIndex = 3;
-            InfoTech2.Text = "InfoTech2";
+            INFO2SCORE.AutoSize = true;
+            INFO2SCORE.Font = new Font("Segoe UI", 12F);
+            INFO2SCORE.Location = new Point(19, 75);
+            INFO2SCORE.Name = "INFO2SCORE";
+            INFO2SCORE.Size = new Size(53, 28);
+            INFO2SCORE.TabIndex = 12;
+            INFO2SCORE.Text = "1/15";
+            INFO2SCORE.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // InfoTech2button
             // 
-            InfoTech2button.Location = new Point(20, 96);
+            InfoTech2button.Location = new Point(19, 106);
             InfoTech2button.Name = "InfoTech2button";
             InfoTech2button.Size = new Size(94, 29);
             InfoTech2button.TabIndex = 1;
@@ -184,28 +232,41 @@
             InfoTech2button.UseVisualStyleBackColor = true;
             InfoTech2button.Click += InfoTech2button_Click;
             // 
+            // InfoTech2
+            // 
+            InfoTech2.AutoSize = true;
+            InfoTech2.Font = new Font("Segoe UI", 12F);
+            InfoTech2.Location = new Point(19, 47);
+            InfoTech2.Name = "InfoTech2";
+            InfoTech2.Size = new Size(95, 28);
+            InfoTech2.TabIndex = 3;
+            InfoTech2.Text = "InfoTech2";
+            // 
             // Biology1panel
             // 
-            Biology1panel.BackColor = Color.AntiqueWhite;
-            Biology1panel.Controls.Add(Biology1);
+            Biology1panel.BackColor = Color.Lime;
+            Biology1panel.Controls.Add(BIO1SCORE);
             Biology1panel.Controls.Add(Biology1button);
+            Biology1panel.Controls.Add(Biology1);
             Biology1panel.Location = new Point(229, 256);
             Biology1panel.Name = "Biology1panel";
             Biology1panel.Size = new Size(128, 138);
             Biology1panel.TabIndex = 7;
             // 
-            // Biology1
+            // BIO1SCORE
             // 
-            Biology1.AutoSize = true;
-            Biology1.Location = new Point(31, 30);
-            Biology1.Name = "Biology1";
-            Biology1.Size = new Size(68, 20);
-            Biology1.TabIndex = 3;
-            Biology1.Text = "Biology1";
+            BIO1SCORE.AutoSize = true;
+            BIO1SCORE.Font = new Font("Segoe UI", 12F);
+            BIO1SCORE.Location = new Point(20, 75);
+            BIO1SCORE.Name = "BIO1SCORE";
+            BIO1SCORE.Size = new Size(53, 28);
+            BIO1SCORE.TabIndex = 13;
+            BIO1SCORE.Text = "1/15";
+            BIO1SCORE.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Biology1button
             // 
-            Biology1button.Location = new Point(20, 96);
+            Biology1button.Location = new Point(20, 106);
             Biology1button.Name = "Biology1button";
             Biology1button.Size = new Size(94, 29);
             Biology1button.TabIndex = 1;
@@ -213,9 +274,20 @@
             Biology1button.UseVisualStyleBackColor = true;
             Biology1button.Click += Biology1button_Click;
             // 
+            // Biology1
+            // 
+            Biology1.AutoSize = true;
+            Biology1.Font = new Font("Segoe UI", 12F);
+            Biology1.Location = new Point(20, 47);
+            Biology1.Name = "Biology1";
+            Biology1.Size = new Size(90, 28);
+            Biology1.TabIndex = 3;
+            Biology1.Text = "Biology1";
+            // 
             // Physics1panel
             // 
-            Physics1panel.BackColor = Color.AntiqueWhite;
+            Physics1panel.BackColor = Color.Yellow;
+            Physics1panel.Controls.Add(PHY1SCORE);
             Physics1panel.Controls.Add(Physics1);
             Physics1panel.Controls.Add(Physics1button);
             Physics1panel.Location = new Point(406, 256);
@@ -223,18 +295,30 @@
             Physics1panel.Size = new Size(128, 138);
             Physics1panel.TabIndex = 8;
             // 
+            // PHY1SCORE
+            // 
+            PHY1SCORE.AutoSize = true;
+            PHY1SCORE.Font = new Font("Segoe UI", 12F);
+            PHY1SCORE.Location = new Point(20, 75);
+            PHY1SCORE.Name = "PHY1SCORE";
+            PHY1SCORE.Size = new Size(53, 28);
+            PHY1SCORE.TabIndex = 14;
+            PHY1SCORE.Text = "1/15";
+            PHY1SCORE.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // Physics1
             // 
             Physics1.AutoSize = true;
-            Physics1.Location = new Point(31, 30);
+            Physics1.Font = new Font("Segoe UI", 12F);
+            Physics1.Location = new Point(20, 47);
             Physics1.Name = "Physics1";
-            Physics1.Size = new Size(63, 20);
+            Physics1.Size = new Size(85, 28);
             Physics1.TabIndex = 3;
             Physics1.Text = "Physics1";
             // 
             // Physics1button
             // 
-            Physics1button.Location = new Point(20, 96);
+            Physics1button.Location = new Point(20, 106);
             Physics1button.Name = "Physics1button";
             Physics1button.Size = new Size(94, 29);
             Physics1button.TabIndex = 1;
@@ -246,7 +330,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(637, 450);
+            ClientSize = new Size(737, 450);
             Controls.Add(Physics1panel);
             Controls.Add(Biology1panel);
             Controls.Add(InfoTech2panel);
@@ -296,5 +380,11 @@
         private Label Physics1;
         private Button Physics1button;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private Label MATH1SCORE;
+        private Label MATH2SCORE;
+        private Label INFO1SCORE;
+        private Label INFO2SCORE;
+        private Label BIO1SCORE;
+        private Label PHY1SCORE;
     }
 }

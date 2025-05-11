@@ -11,7 +11,7 @@ namespace SOFTDEV_FINAL_PROJECT
     {
         public LOGINFORM()
         {
-         
+
             InitializeComponent();
         }
 
@@ -22,7 +22,7 @@ namespace SOFTDEV_FINAL_PROJECT
 
         private void buttonCREATE_Click(object sender, EventArgs e)
         {
-     
+
             CREATE_form createform = new CREATE_form();
             createform.Show();
             this.Hide();
@@ -68,9 +68,16 @@ namespace SOFTDEV_FINAL_PROJECT
                                         MessageBox.Show($"Login Successful! Welcome, {nameFromDB} (ID: {studentIdFromDB})", "Success");
 
                                         // You must modify your userform  constructor to accept two arguments
+
+                                        // PAKAON
                                         User_Profile userform = new User_Profile(nameFromDB, studentIdFromDB);
 
                                         DASHBOARD_form dashForm = new DASHBOARD_form(nameFromDB, studentIdFromDB);
+
+                                        Achievements achieve = new Achievements(nameFromDB, studentIdFromDB);
+
+                                        Quizbot Quiz = new Quizbot(nameFromDB, studentIdFromDB);
+
 
 
                                         dashForm.Show();
@@ -100,5 +107,9 @@ namespace SOFTDEV_FINAL_PROJECT
 
         }
 
+        private void buttonexit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

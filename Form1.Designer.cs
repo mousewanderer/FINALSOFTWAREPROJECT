@@ -106,6 +106,7 @@
             buttonexit.TabIndex = 10;
             buttonexit.Text = "X";
             buttonexit.UseVisualStyleBackColor = false;
+            buttonexit.Click += buttonexit_Click;
             // 
             // forgotpassword
             // 
