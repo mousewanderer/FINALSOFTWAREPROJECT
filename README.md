@@ -58,12 +58,12 @@ version 1.3
 // SQL commands
 
 
-```cd Discord-chat-bot-sample.py
+```
 USE Final_projectDB; 
  GO
-
  
-DROP TABLE dbo.Students; 
+DROP TABLE dbo.Students;
+
 DROP TABLE dbo.Quizzes;
 
  
@@ -96,35 +96,28 @@ DROP TABLE dbo.Quizzes;
  ); 
 
 
-
 INSERT INTO Quizzes (StudentID, numquiz, Leveling, Math1, Math2, InfoTech1, InfoTech2, Biology1, Physics1)
 VALUES 
-(1, 5, 3, 12, 25, 14, 29, 11, 13),
-(2, 4, 2, 9, 21, 13, 26, 8, 10),
-(3, 6, 4, 15, 30, 15, 27, 13, 14),
-(4, 5, 3, 10, 23, 12, 20, 9, 12),
-(5, 3, 2, 7, 19, 8, 15, 6, 7),
-(6, 7, 5, 14, 28, 15, 30, 13, 15),
-(7, 4, 2, 8, 18, 10, 20, 7, 9),
-(8, 3, 1, 5, 12, 6, 14, 5, 6),
-(9, 5, 3, 11, 22, 13, 25, 10, 12),
-(10, 6, 4, 13, 28, 14, 27, 12, 13),
-(11, 4, 2, 9, 16, 8, 17, 6, 7),
-(12, 5, 3, 10, 20, 12, 22, 9, 10),
-(13, 6, 4, 14, 29, 15, 30, 13, 14),
-(14, 3, 2, 7, 15, 9, 18, 7, 8),
-(15, 4, 3, 10, 23, 11, 24, 9, 10),
-(16, 5, 3, 12, 25, 13, 26, 10, 11),
-(17, 2, 1, 6, 10, 5, 12, 4, 5),
-(18, 3, 2, 8, 19, 9, 20, 7, 8),
-(19, 5, 3, 11, 27, 12, 28, 10, 11),
-(20, 4, 2, 9, 21, 10, 23, 8, 9),
-(21, 6, 4, 13, 30, 15, 29, 12, 13),
-(22, 3, 1, 5, 14, 6, 16, 5, 6),
-(23, 4, 2, 8, 17, 9, 19, 7, 8),
-(24, 5, 3, 12, 24, 13, 25, 11, 12),
-(25, 2, 5, 13, 27, 14, 29, 12, 14);
+-- 1. Gojo: all valid scores, Math1=12 (pass), Info1=14 (pass) → all unlocked
+-- Quizzes taken: 6 → Leveling = 6
+(1, 6, 6, 12, 25, 14, 29, 11, 13),
 
+-- 2. Albert: all valid, Math1=9 (pass), Info1=13 (pass) → all unlocked
+-- Quizzes taken: 6 → Leveling = 6
+(2, 6, 6, 9, 21, 13, 26, 8, 10),
+
+-- 3. Erwin: Math1=15 (pass), Info1=15 (pass)
+-- Quizzes taken: 6 → Leveling = 6
+(3, 6, 6, 15, 30, 15, 27, 13, 14),
+
+-- 4. Lelouch: Math1=10 (pass), Info1=12 (pass)
+-- Quizzes taken: 6 → Leveling = 6
+(4, 6, 6, 10, 23, 12, 20, 9, 12),
+
+-- 5. Guts: Biology1 = 6 (taken) → all other topics set to -1
+-- Quizzes taken: 1 → Leveling = 1
+(5, 1, 1, -1, -1, -1, -1, 6, -1),
+(6, 1, 1, -1, -1, -1, -1, -1, -1);
 
  
 INSERT INTO Students (StudentID, FirstName, LastName, Age, Gender, Program, Username, KeyPassword) 
@@ -133,23 +126,14 @@ VALUES
 (2, 'Albert', 'Eintsein', 24, 'Male', 'Electrical Engineer', 'Imakethemcry', 'Tears100M2'),
 (3, 'Erwin', 'Rommel', 24, 'Male', 'Mechanical Engineer', 'Desssertfox', 'HeilH1tl3r'),
 (4, 'Lelouch', 'Lamperouge', 22, 'Male', 'Political Science', 'ZeroKnight', 'GeassP99ow'),
-(6, 'Guts', 'Berserker', 27, 'Male', 'Psychology', 'StrugglerX', 'BrandSac9X'),
-(7, 'Edward', 'Elric', 20, 'Male', 'Chemical Engineering', 'FullmetalAlch', 'AutoMail25x'),
-(11, 'Sasuke', 'Uchiha', 25, 'Male', 'Computer Science', 'ShadowAvenger', 'RevengeC07x'),
-(13, 'Light', 'Yagami', 24, 'Male', 'Law', 'JusticeKira', 'Shinigami1x'),
-(14, 'Harry', 'Potter', 22, 'Male', 'Defense Studies', 'TheBoyWhoLived', 'Expell21Us'),
-(15, 'Rick', 'Sanchez', 60, 'Male', 'Quantum Physics', 'WubbaLubba', 'PickleR42k'),
-(16, 'Tony', 'Stark', 35, 'Male', 'Mechanical Engineering', 'IronMind', 'Ironman1Xx'),
-(17, 'Sherlock', 'Holmes', 32, 'Male', 'Forensic Psychology', 'MindPalace', 'Element007a'),
-(19, 'Peter', 'Parker', 21, 'Male', 'Multimedia Arts', 'WebSlinger', 'SpiderM9nX'),
-(20, 'Marie', 'Curie', 26, 'Female', 'Chemistry', 'RadioactiveGal', 'Polonium88Y'),
-(21, 'Bruce', 'Wayne', 34, 'Male', 'Criminology', 'DarkKnight', 'IamBatm4nX'),
-(22, 'Diana', 'Prince', 29, 'Female', 'International Relations', 'WonderDiplomat', 'Last0Tru7h'),
-(23, 'Indiana', 'Jones', 38, 'Male', 'History', 'IndyExplorer', 'Snakes102a'),
-(24, 'Bon', 'Clay', 30, 'LGBTQA', 'Performing Arts', 'OkamaWay', 'SwanDance1A'),
--- Admin for easy debug
-(25, 'Admin', 'windy', 20, 'Male', 'Quantum Physics', 'm', 'm');
+(5, 'Guts', 'Berserker', 27, 'Male', 'Psychology', 'StrugglerX', 'BrandSac9X'), 
+(6, 'ADMIN', 'FIXER', 27, 'Male', 'Electrical Engineer', 'm', 'm'); 
+
+
+
 GO
+
+
 select * from Students
 
 
