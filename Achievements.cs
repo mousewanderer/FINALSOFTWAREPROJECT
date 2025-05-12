@@ -69,9 +69,13 @@ namespace SOFTDEV_FINAL_PROJECT
 
                                 
 
-                                // ACHIEVEMENTS CHECKER
+                                // ACHIEVEMENTS CHECKER for passed quiz
 
                                 int passingScore = 8;
+                                int passingScoreSecondary = 15;
+
+                                int maxscore = 15;
+                                int maxScoreSecondary = 30;
 
 
                                 // Check if any score meets the passing condition
@@ -79,9 +83,49 @@ namespace SOFTDEV_FINAL_PROJECT
                                                       INFO1SCOREraw >= passingScore ||
                                                       BIO1SCOREraw >= passingScore ||
                                                       PHY1SCOREraw >= passingScore;
+                                bool passedSECONDARY = MATH2SCOREraw >= passingScoreSecondary || INFO2SCOREraw >= passingScoreSecondary;
+
+                                bool passedALL = MATH1SCOREraw >= passingScore &&
+                                                      INFO1SCOREraw >= passingScore &&
+                                                      BIO1SCOREraw >= passingScore &&
+                                                       MATH2SCOREraw >= passingScoreSecondary &&
+                                                       INFO2SCOREraw >= passingScoreSecondary &&
+                                                       PHY1SCOREraw >= passingScore;
+
+                                bool PERFECTED = MATH1SCOREraw >= maxscore ||
+                                                      INFO1SCOREraw >= maxscore ||
+                                                      BIO1SCOREraw >= maxscore ||
+                                                      PHY1SCOREraw >= maxscore ||
+                                                      MATH2SCOREraw >= maxScoreSecondary ||
+                                                       INFO2SCOREraw >= maxScoreSecondary;
+
+                                // PASSED 1 quizzes
                                 if (passedAnyQuiz)
                                 {
                                     I_PASSED_one();
+                                }
+
+                                // PASSED both 1 and 2
+                                if (passedSECONDARY && passedAnyQuiz)
+                                {
+                                    //
+                                    PASSED_both_1_and_2();
+
+                                }
+
+                                // PASSED ALL
+                                if (passedALL)
+                                {
+                                    //
+                                    PASSEDALL();
+                                }
+
+                                // PASSED ALL
+                                if (PERFECTED)
+                                {
+                                    //
+
+                                    PERFECT();
                                 }
 
 
@@ -104,22 +148,66 @@ namespace SOFTDEV_FINAL_PROJECT
 
 
 
+        private void PERFECT()
+        {
+
+            PERFECT_1_quiz.BackgroundImage = null;
+            // Set the background image
+
+            string imagePath = Path.Combine(Application.StartupPath, "ACHIEVEMENTS", "PERFECT1.png");
+            PERFECT_1_quiz.BackgroundImage = Image.FromFile(imagePath);
+
+            PASSED_2_QUIZZES.BackgroundImageLayout = ImageLayout.Zoom; // Ensures the image is zoomed to fit the PictureBox
+
+            // Optionally, change the border color (if you want to make it more visually prominent)
+            PERFECT_1_quiz.BorderStyle = BorderStyle.FixedSingle; // Makes a border visible
+            PERFECT_1_quiz.BackColor = Color.Yellow; // Change the background color to green (you can choose any color you prefer)
+        }
 
 
 
 
+        private void PASSED_both_1_and_2()
+        {
 
-        private void  I_PASSED_one()
+            PASSED_2_QUIZZES.BackgroundImage = null;
+            // Set the background image
+
+            string imagePath = Path.Combine(Application.StartupPath, "ACHIEVEMENTS", "PASSED2.png");
+            PASSED_2_QUIZZES.BackgroundImage = Image.FromFile(imagePath);
+
+            PASSED_2_QUIZZES.BackgroundImageLayout = ImageLayout.Zoom; // Ensures the image is zoomed to fit the PictureBox
+
+            // Optionally, change the border color (if you want to make it more visually prominent)
+            PASSED_2_QUIZZES.BorderStyle = BorderStyle.FixedSingle; // Makes a border visible
+            PASSED_2_QUIZZES.BackColor = Color.YellowGreen; // Change the background color to green (you can choose any color you prefer)
+        }
+
+        private void PASSEDALL()
+        {
+
+            PASSED_ALL.BackgroundImage = null;
+            // Set the background image
+
+            string imagePath = Path.Combine(Application.StartupPath, "ACHIEVEMENTS", "PASSEDALL.png");
+            PASSED_ALL.BackgroundImage = Image.FromFile(imagePath);
+
+            PASSED_ALL.BackgroundImageLayout = ImageLayout.Zoom; // Ensures the image is zoomed to fit the PictureBox
+
+            // Optionally, change the border color (if you want to make it more visually prominent)
+            PASSED_ALL.BorderStyle = BorderStyle.FixedSingle; // Makes a border visible
+            PASSED_ALL.BackColor = Color.Red; // Change the background color to green (you can choose any color you prefer)
+        }
+
+
+
+        private void I_PASSED_one()
         {
             // Change the image of PASSED_1_quiz PictureBox
 
-            
-               
             // Remove the background image (if the lock is set as the background image)
             PASSED_1_quiz.BackgroundImage = null;
-
             // Set the background image
-
             string imagePath = Path.Combine(Application.StartupPath, "ACHIEVEMENTS", "PASSED1.png");
             PASSED_1_quiz.BackgroundImage = Image.FromFile(imagePath);
 

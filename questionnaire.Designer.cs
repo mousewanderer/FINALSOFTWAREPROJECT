@@ -42,6 +42,7 @@
             // 
             rbA.AutoSize = true;
             rbA.Font = new Font("Segoe UI", 12F);
+            rbA.ForeColor = Color.FromArgb(40, 122, 116);
             rbA.Location = new Point(36, 133);
             rbA.Margin = new Padding(4);
             rbA.Name = "rbA";
@@ -55,6 +56,7 @@
             // 
             rbB.AutoSize = true;
             rbB.Font = new Font("Segoe UI", 12F);
+            rbB.ForeColor = Color.FromArgb(40, 122, 116);
             rbB.Location = new Point(36, 175);
             rbB.Margin = new Padding(4);
             rbB.Name = "rbB";
@@ -68,6 +70,7 @@
             // 
             rbC.AutoSize = true;
             rbC.Font = new Font("Segoe UI", 12F);
+            rbC.ForeColor = Color.FromArgb(40, 122, 116);
             rbC.Location = new Point(36, 217);
             rbC.Margin = new Padding(4);
             rbC.Name = "rbC";
@@ -81,6 +84,7 @@
             // 
             rbD.AutoSize = true;
             rbD.Font = new Font("Segoe UI", 12F);
+            rbD.ForeColor = Color.FromArgb(40, 122, 116);
             rbD.Location = new Point(36, 259);
             rbD.Margin = new Padding(4);
             rbD.Name = "rbD";
@@ -92,6 +96,7 @@
             // 
             // NEXTbutton
             // 
+            NEXTbutton.ForeColor = Color.FromArgb(40, 122, 116);
             NEXTbutton.Location = new Point(25, 328);
             NEXTbutton.Margin = new Padding(4);
             NEXTbutton.Name = "NEXTbutton";
@@ -104,6 +109,7 @@
             // QUESTION_Label
             // 
             QUESTION_Label.AutoSize = true;
+            QUESTION_Label.ForeColor = Color.FromArgb(40, 122, 116);
             QUESTION_Label.Location = new Point(36, 37);
             QUESTION_Label.Margin = new Padding(4, 0, 4, 0);
             QUESTION_Label.Name = "QUESTION_Label";
@@ -114,6 +120,7 @@
             // SCORELABEL
             // 
             SCORELABEL.AutoSize = true;
+            SCORELABEL.ForeColor = Color.FromArgb(40, 122, 116);
             SCORELABEL.Location = new Point(749, 9);
             SCORELABEL.Name = "SCORELABEL";
             SCORELABEL.Size = new Size(71, 28);
@@ -123,6 +130,7 @@
             // lblFeedback
             // 
             lblFeedback.AutoSize = true;
+            lblFeedback.ForeColor = Color.FromArgb(40, 122, 116);
             lblFeedback.Location = new Point(731, 357);
             lblFeedback.Name = "lblFeedback";
             lblFeedback.Size = new Size(117, 28);
@@ -133,6 +141,7 @@
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(209, 216, 246);
             ClientSize = new Size(901, 404);
             Controls.Add(lblFeedback);
             Controls.Add(SCORELABEL);

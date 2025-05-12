@@ -108,7 +108,7 @@ namespace SOFTDEV_FINAL_PROJECT
 
 
 
-        // QUIZ BOT CLICK
+        // QUIZ BOT CLICK0------------------------------------------------------
 
         private void Math1button_Click(object sender, EventArgs e)
         {

@@ -93,7 +93,11 @@ namespace SOFTDEV_FINAL_PROJECT
 
         private void Rankingbutton_Click(object sender, EventArgs e)
         {
+            // RANKING
 
+            LoadForm(new RANKING());
+          
+            
         }
     }
 }

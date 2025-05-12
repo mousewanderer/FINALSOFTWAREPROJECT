@@ -208,43 +208,66 @@ namespace SOFTDEV_FINAL_PROJECT
         }
 
 
-
         private void SaveQuizScoreToDatabase(string quizColumn, int score)
         {
             string connectionString = "Server=localhost;Database=Final_projectDB;Trusted_Connection=True;";
-
-            // Only level up if score >= 8
-            string query;
-            if (score >= 8)
-            {
-                query = $@"
-            UPDATE Quizzes 
-            SET {quizColumn} = @Score, 
-                numquiz = numquiz + 1,
-                Leveling = Leveling + 1
-            WHERE StudentID = @StudentID";
-            }
-            else
-            {
-                query = $@"
-            UPDATE Quizzes 
-            SET {quizColumn} = @Score, 
-                numquiz = numquiz + 1
-            WHERE StudentID = @StudentID";
-            }
+            int? previousScore = null;
 
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
-                using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@Score", score);
-                    cmd.Parameters.AddWithValue("@StudentID", studentID);
                     conn.Open();
-                    int rows = cmd.ExecuteNonQuery();
-                    if (rows == 0)
+
+                    // Step 1: Get the current score
+                    string getScoreQuery = $"SELECT {quizColumn} FROM Quizzes WHERE StudentID = @StudentID";
+                    using (SqlCommand getCmd = new SqlCommand(getScoreQuery, conn))
                     {
-                        MessageBox.Show("Failed to update score. Student ID may not exist.");
+                        getCmd.Parameters.AddWithValue("@StudentID", studentID);
+                        object result = getCmd.ExecuteScalar();
+                        if (result != DBNull.Value && result != null)
+                        {
+                            previousScore = Convert.ToInt32(result);
+                        }
+                    }
+
+                    // Step 2: Compare and update only if the new score is higher
+                    if (previousScore == null || score > previousScore)
+                    {
+                        string updateQuery;
+
+                        if (score >= 8)
+                        {
+                            updateQuery = $@"
+                        UPDATE Quizzes 
+                        SET {quizColumn} = @Score, 
+                            numquiz = numquiz + 1,
+                            Leveling = Leveling + 1
+                        WHERE StudentID = @StudentID";
+                        }
+                        else
+                        {
+                            updateQuery = $@"
+                        UPDATE Quizzes 
+                        SET {quizColumn} = @Score, 
+                            numquiz = numquiz + 1
+                        WHERE StudentID = @StudentID";
+                        }
+
+                        using (SqlCommand updateCmd = new SqlCommand(updateQuery, conn))
+                        {
+                            updateCmd.Parameters.AddWithValue("@Score", score);
+                            updateCmd.Parameters.AddWithValue("@StudentID", studentID);
+                            int rows = updateCmd.ExecuteNonQuery();
+                            if (rows == 0)
+                            {
+                                MessageBox.Show("Failed to update score. Student ID may not exist.");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Previous score is higher. No update made.");
                     }
                 }
             }
@@ -256,4 +279,4 @@ namespace SOFTDEV_FINAL_PROJECT
 
 
     }
-    }
+}
