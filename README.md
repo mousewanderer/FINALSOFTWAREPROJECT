@@ -4,7 +4,7 @@
 A gamified Student Learning Management System (LMS) with quiz-based learning for IT subjects.
 Incorporates RPG elements like leveling up, badges, and achievements, making learning fun and engaging.
 
-🧑‍🏫 Teacher = Admin
+(REMOVED KAY KAPOY NA HAHAHA)
 🎓 Student = Learner
 ✅ Students can view completed tasks, quizzes, and progress.
 
