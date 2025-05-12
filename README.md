@@ -35,22 +35,12 @@ Nugets I add
 
 
 
-version 1.3
+version 1.5
 
-![Screenshot 2025-05-03 001504](https://github.com/user-attachments/assets/668c17a6-ce7f-42ff-810e-c18cc9dd5b76)
-![Screenshot 2025-05-03 001441](https://github.com/user-attachments/assets/c022f000-a99e-4fe8-ac29-d71c611c9af9)
-
-![Screenshot 2025-05-03 001436](https://github.com/user-attachments/assets/86f47159-e72b-49ef-82a8-c2f3a245186b)
-
-![Screenshot 2025-04-19 013521](https://github.com/user-attachments/assets/356f5a6a-3433-4ade-a990-911defb350e8)
+VIDEO FOR DEMONSTRATION
+https://github.com/user-attachments/assets/b72d7633-d898-46bd-bf12-5347bca607c3
 
 
-![Screenshot 2025-05-03 001419](https://github.com/user-attachments/assets/b44681b1-0e20-4569-abd6-0a6a980d13be)
-![Screenshot 2025-05-03 001407](https://github.com/user-attachments/assets/f946342f-695c-47bb-8e91-d0f3e2434de0)
-![Screenshot 2025-05-03 001400](https://github.com/user-attachments/assets/fcd0cf38-3dbf-46e6-acae-621f50a4f490)
-![Screenshot 2025-05-03 001355](https://github.com/user-attachments/assets/fcc628ca-bb81-42f5-933b-643342ce781a)
-![Screenshot 2025-05-03 001349](https://github.com/user-attachments/assets/179682f8-0dc8-47ab-aa82-42cb57840499)
-![Screenshot 2025-05-03 001530](https://github.com/user-attachments/assets/6e988770-7987-40e9-a9a5-963e968770ef)
 
 
 
