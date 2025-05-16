@@ -40,12 +40,12 @@ namespace SOFTDEV_FINAL_PROJECT
             S.FirstName + ' ' + S.LastName AS FullName,
             Q.numquiz,
             Q.Leveling,
-            CASE WHEN Q.Math1 = -1 THEN 'Not Taken' ELSE CAST(Q.Math1 AS VARCHAR) END AS Math1,
-            CASE WHEN Q.Math2 = -1 THEN 'Not Taken' ELSE CAST(Q.Math2 AS VARCHAR) END AS Math2,
-            CASE WHEN Q.InfoTech1 = -1 THEN 'Not Taken' ELSE CAST(Q.InfoTech1 AS VARCHAR) END AS InfoTech1,
-            CASE WHEN Q.InfoTech2 = -1 THEN 'Not Taken' ELSE CAST(Q.InfoTech2 AS VARCHAR) END AS InfoTech2,
-            CASE WHEN Q.Biology1 = -1 THEN 'Not Taken' ELSE CAST(Q.Biology1 AS VARCHAR) END AS Biology1,
-            CASE WHEN Q.Physics1 = -1 THEN 'Not Taken' ELSE CAST(Q.Physics1 AS VARCHAR) END AS Physics1
+            CASE WHEN Q.Math1 = -1 THEN '-1' ELSE CAST(Q.Math1 AS VARCHAR) END AS Math1,
+            CASE WHEN Q.Math2 = -1 THEN '-1' ELSE CAST(Q.Math2 AS VARCHAR) END AS Math2,
+            CASE WHEN Q.InfoTech1 = -1 THEN '-1' ELSE CAST(Q.InfoTech1 AS VARCHAR) END AS InfoTech1,
+            CASE WHEN Q.InfoTech2 = -1 THEN '-1' ELSE CAST(Q.InfoTech2 AS VARCHAR) END AS InfoTech2,
+            CASE WHEN Q.Biology1 = -1 THEN '-1' ELSE CAST(Q.Biology1 AS VARCHAR) END AS Biology1,
+            CASE WHEN Q.Physics1 = -1 THEN '-1' ELSE CAST(Q.Physics1 AS VARCHAR) END AS Physics1
         FROM Students S
         INNER JOIN Quizzes Q ON S.StudentID = Q.StudentID
         WHERE S.StudentID = @StudentID;
@@ -70,12 +70,12 @@ namespace SOFTDEV_FINAL_PROJECT
                                 string BIO1SCOREraw = reader["Biology1"].ToString();
                                 string PHY1SCOREraw = reader["Physics1"].ToString();
 
-                                MATH1SCORE.Text = MATH1SCOREraw == "-1" ? "NOT TAKEN" : MATH1SCOREraw;
-                                MATH2SCORE.Text = MATH2SCOREraw == "-1" ? "NOT TAKEN" : MATH2SCOREraw;
-                                INFO1SCORE.Text = INFO1SCOREraw == "-1" ? "NOT TAKEN" : INFO1SCOREraw;
-                                INFO2SCORE.Text = INFO2SCOREraw == "-1" ? "NOT TAKEN" : INFO2SCOREraw;
-                                BIO1SCORE.Text = BIO1SCOREraw == "-1" ? "NOT TAKEN" : BIO1SCOREraw;
-                                PHY1SCORE.Text = PHY1SCOREraw == "-1" ? "NOT TAKEN" : PHY1SCOREraw;
+                                MATH1SCORE.Text = MATH1SCOREraw == "-1" ? "NOT TAKEN" : $"Best: {MATH1SCOREraw}/15";
+                                MATH2SCORE.Text = MATH2SCOREraw == "-1" ? "NOT TAKEN" : $"Best: {MATH2SCOREraw}/30";
+                                INFO1SCORE.Text = INFO1SCOREraw == "-1" ? "NOT TAKEN" : $"Best: {INFO1SCOREraw}/15";
+                                INFO2SCORE.Text = INFO2SCOREraw == "-1" ? "NOT TAKEN" : $"Best: {INFO2SCOREraw}/30";
+                                BIO1SCORE.Text = BIO1SCOREraw == "-1" ? "NOT TAKEN" : $"Best: {BIO1SCOREraw}/15";
+                                PHY1SCORE.Text = PHY1SCOREraw == "-1" ? "NOT TAKEN" : $"Best: {PHY1SCOREraw}/15";
 
 
 

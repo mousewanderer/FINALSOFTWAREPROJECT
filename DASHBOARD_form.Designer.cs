@@ -50,7 +50,7 @@
             // 
             Backbutto.BackColor = Color.Teal;
             Backbutto.ForeColor = Color.White;
-            Backbutto.Location = new Point(1107, 12);
+            Backbutto.Location = new Point(151, 482);
             Backbutto.Name = "Backbutto";
             Backbutto.Size = new Size(94, 29);
             Backbutto.TabIndex = 0;
@@ -64,9 +64,9 @@
             Profile_button.ForeColor = Color.Transparent;
             Profile_button.Image = (Image)resources.GetObject("Profile_button.Image");
             Profile_button.ImageAlign = ContentAlignment.MiddleLeft;
-            Profile_button.Location = new Point(3, 174);
+            Profile_button.Location = new Point(12, 174);
             Profile_button.Name = "Profile_button";
-            Profile_button.Size = new Size(271, 64);
+            Profile_button.Size = new Size(240, 64);
             Profile_button.TabIndex = 7;
             Profile_button.Text = "Profile";
             Profile_button.UseVisualStyleBackColor = false;
@@ -78,9 +78,9 @@
             quizbotbutton.ForeColor = Color.Transparent;
             quizbotbutton.Image = (Image)resources.GetObject("quizbotbutton.Image");
             quizbotbutton.ImageAlign = ContentAlignment.MiddleLeft;
-            quizbotbutton.Location = new Point(3, 314);
+            quizbotbutton.Location = new Point(12, 314);
             quizbotbutton.Name = "quizbotbutton";
-            quizbotbutton.Size = new Size(271, 73);
+            quizbotbutton.Size = new Size(240, 73);
             quizbotbutton.TabIndex = 5;
             quizbotbutton.Text = "Quizbot";
             quizbotbutton.UseVisualStyleBackColor = false;
@@ -92,9 +92,9 @@
             AchievementsButton.ForeColor = Color.Transparent;
             AchievementsButton.Image = (Image)resources.GetObject("AchievementsButton.Image");
             AchievementsButton.ImageAlign = ContentAlignment.MiddleLeft;
-            AchievementsButton.Location = new Point(3, 244);
+            AchievementsButton.Location = new Point(12, 244);
             AchievementsButton.Name = "AchievementsButton";
-            AchievementsButton.Size = new Size(271, 64);
+            AchievementsButton.Size = new Size(240, 64);
             AchievementsButton.TabIndex = 5;
             AchievementsButton.Text = "Achievements";
             AchievementsButton.UseVisualStyleBackColor = false;
@@ -106,9 +106,9 @@
             Rankingbutton.ForeColor = Color.Transparent;
             Rankingbutton.Image = (Image)resources.GetObject("Rankingbutton.Image");
             Rankingbutton.ImageAlign = ContentAlignment.MiddleLeft;
-            Rankingbutton.Location = new Point(3, 393);
+            Rankingbutton.Location = new Point(12, 393);
             Rankingbutton.Name = "Rankingbutton";
-            Rankingbutton.Size = new Size(271, 64);
+            Rankingbutton.Size = new Size(240, 64);
             Rankingbutton.TabIndex = 6;
             Rankingbutton.Text = "Ranking";
             Rankingbutton.UseVisualStyleBackColor = false;
@@ -119,16 +119,16 @@
             SearchTextbox.BackColor = Color.Teal;
             SearchTextbox.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SearchTextbox.ForeColor = Color.White;
-            SearchTextbox.Location = new Point(72, 613);
+            SearchTextbox.Location = new Point(81, 550);
             SearchTextbox.Name = "SearchTextbox";
-            SearchTextbox.Size = new Size(202, 51);
+            SearchTextbox.Size = new Size(164, 51);
             SearchTextbox.TabIndex = 5;
             // 
             // Search_button
             // 
             Search_button.BackColor = Color.Teal;
             Search_button.Image = (Image)resources.GetObject("Search_button.Image");
-            Search_button.Location = new Point(3, 610);
+            Search_button.Location = new Point(12, 544);
             Search_button.Name = "Search_button";
             Search_button.Size = new Size(63, 57);
             Search_button.TabIndex = 5;
@@ -137,9 +137,9 @@
             // MAINPanel
             // 
             MAINPanel.BackColor = Color.Turquoise;
-            MAINPanel.Location = new Point(308, 47);
+            MAINPanel.Location = new Point(267, 12);
             MAINPanel.Name = "MAINPanel";
-            MAINPanel.Size = new Size(899, 620);
+            MAINPanel.Size = new Size(820, 600);
             MAINPanel.TabIndex = 0;
             // 
             // DASHBOARD_form
@@ -149,7 +149,7 @@
             BackColor = SystemColors.ControlLight;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Zoom;
-            ClientSize = new Size(1219, 686);
+            ClientSize = new Size(1100, 620);
             Controls.Add(Backbutto);
             Controls.Add(Rankingbutton);
             Controls.Add(Search_button);
@@ -159,7 +159,7 @@
             Controls.Add(quizbotbutton);
             Controls.Add(MAINPanel);
             DoubleBuffered = true;
-            FormBorderStyle = FormBorderStyle.SizableToolWindow;
+            FormBorderStyle = FormBorderStyle.None;
             Name = "DASHBOARD_form";
             Text = "DASHBOARD_form";
             Load += DASHBOARD_form_Load_1;

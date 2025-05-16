@@ -53,9 +53,9 @@ namespace SOFTDEV_FINAL_PROJECT
                     {
                         if (reader1.Read())
                         {
-                            num_quizzes.Text = $"Your quizzes are {reader1["numquiz"].ToString()}";
-                            LEVEL_label.Text = $"Your level is {reader1["Leveling"].ToString()}";
-                            Firstname.Text = $"FIRST NAME: {studentFirstName}";
+                            num_quizzes.Text = $"You take :{reader1["numquiz"].ToString()} quizzes";
+                            LEVEL_label.Text = $"Level: {reader1["Leveling"].ToString()}";
+                            Firstname.Text = $"{studentFirstName}";
                         }
                     }
                 }
@@ -71,11 +71,11 @@ namespace SOFTDEV_FINAL_PROJECT
                     {
                         if (reader2.Read())
                         {
-                            lastname.Text = $"LAST NAME: {reader2["LastName"].ToString()}";
-                            Agelabel.Text = $"AGE: {reader2["Age"].ToString()}";
-                            Gender.Text = $"GENDER: {reader2["Gender"].ToString()}";
-                            CourseLabel.Text = $"Program: {reader2["Program"].ToString()}";
-                            Usernamelabel.Text = $"Username: {reader2["Username"].ToString()}"; // corrected to Username
+                            lastname.Text = $"{reader2["LastName"].ToString()}";
+                            Agelabel.Text = $"{reader2["Age"].ToString()}";
+                            Gender.Text = $"{reader2["Gender"].ToString()}";
+                            CourseLabel.Text = $"{reader2["Program"].ToString()}";
+                            Usernamelabel.Text = $"{reader2["Username"].ToString()}"; // corrected to Username
                         }
                     }
                 }

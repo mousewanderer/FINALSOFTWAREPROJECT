@@ -28,36 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            TOP5 = new Label();
             SuspendLayout();
-            // 
-            // TOP5
-            // 
-            TOP5.AutoSize = true;
-            TOP5.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TOP5.Location = new Point(45, 28);
-            TOP5.Name = "TOP5";
-            TOP5.Size = new Size(342, 46);
-            TOP5.TabIndex = 0;
-            TOP5.Text = "TOP 5 Highest SCORE";
             // 
             // RANKING
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaption;
+            BackColor = Color.FromArgb(193, 219, 217);
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(800, 450);
-            Controls.Add(TOP5);
+            ClientSize = new Size(820, 600);
             FormBorderStyle = FormBorderStyle.None;
             Name = "RANKING";
             Text = "RANKING";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Label TOP5;
     }
 }
