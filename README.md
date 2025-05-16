@@ -8,7 +8,7 @@ Incorporates RPG elements like leveling up, badges, and achievements, making lea
 🎓 Student = Learner
 ✅ Students can view completed tasks, quizzes, and progress.
 
-💡 Advanced features planned: 1v1 QuizBot battles and a ranking system!
+the ranking system will be implemented!
 
 # Objectives
 
