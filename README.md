@@ -50,10 +50,14 @@ VIDEO FOR DEMONSTRATION
 ```
 USE Final_projectDB; 
  GO
+
+
  
 DROP TABLE dbo.Students;
+ 
 
 DROP TABLE dbo.Quizzes;
+
 
  
  CREATE TABLE Students ( 
@@ -106,7 +110,10 @@ VALUES
 -- 5. Guts: Biology1 = 6 (taken) → all other topics set to -1
 -- Quizzes taken: 1 → Leveling = 1
 (5, 1, 1, -1, -1, -1, -1, 6, -1),
-(6, 1, 1, -1, -1, -1, -1, -1, -1);
+
+(6, 6, 5, 15, 30, 15, 30, 15, 15),
+
+(7, 1, 1, -1, -1, -1, -1, -1, -1);
 
  
 INSERT INTO Students (StudentID, FirstName, LastName, Age, Gender, Program, Username, KeyPassword) 
@@ -116,7 +123,8 @@ VALUES
 (3, 'Erwin', 'Rommel', 24, 'Male', 'Mechanical Engineer', 'Desssertfox', 'HeilH1tl3r'),
 (4, 'Lelouch', 'Lamperouge', 22, 'Male', 'Political Science', 'ZeroKnight', 'GeassP99ow'),
 (5, 'Guts', 'Berserker', 27, 'Male', 'Psychology', 'StrugglerX', 'BrandSac9X'), 
-(6, 'ADMIN', 'FIXER', 27, 'Male', 'Electrical Engineer', 'm', 'm'); 
+(6, 'ADMIN', 'FIXER', 27, 'Male', 'Electrical Engineer', 'm', 'm'), 
+(7, 'Mark', 'Berg', 20, 'Male', 'Computer Engineer', 'k', 'k'); 
 
 
 
@@ -124,6 +132,8 @@ GO
 
 
 select * from Students
+
+
 
 
 ```
