@@ -16,37 +16,42 @@ namespace SOFTDEV_FINAL_PROJECT
         public CREATE_form()
         {
             InitializeComponent();
-        }
 
-      
+            // GENDER ComboBox
 
-
-        private void CREATE_form_Load(object sender, EventArgs e)
-        {
-
-        
-        
-            // Add categories to the gender
             comboBoxGender.Items.Add("Male");
             comboBoxGender.Items.Add("Female");
             comboBoxGender.Items.Add("LGBTQIA");
             comboBoxGender.Items.Add("Rather not say");
 
+            // PROGRAM ComboBox
 
-            // Add categories to the Programs
             comboBoxProgram.Items.Add("Computer Engineer");
             comboBoxProgram.Items.Add("Mechanical Engineer");
             comboBoxProgram.Items.Add("Electrical Engineer");
-            comboBoxProgram.Items.Add("Information Technology");
+            comboBoxProgram.Items.Add("Civil Engineer");
+            comboBoxProgram.Items.Add("Combat Engineer");
+            comboBoxProgram.Items.Add("Information Technology (major in programming)");
+            comboBoxProgram.Items.Add("Information Technology (major in Networking)");
             comboBoxProgram.Items.Add("Food Technology");
             comboBoxProgram.Items.Add("Education");
             comboBoxProgram.Items.Add("Tourism Management");
             comboBoxProgram.Items.Add("Hotel Management");
+            comboBoxProgram.Items.Add("Political Science");
+            comboBoxProgram.Items.Add("Computer Science");
+        }
 
 
-            // No to civil hahahhaa  
 
-            // if you want to addd crim ask him/her to code for it hahahha
+        private void CREATE_form_Load(object sender, EventArgs e)
+        {
+
+
+
+
+
+
+
         }
 
 
@@ -88,11 +93,62 @@ namespace SOFTDEV_FINAL_PROJECT
 
             /// must create a duplicate checker for this one
 
-            if (string.IsNullOrWhiteSpace(lastname))
+            if (string.IsNullOrWhiteSpace(username))
             {
                 MessageBox.Show("Please enter your username.", "Input Error");
                 return;
             }
+
+            if (string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Please enter your password", "Input Error");
+                return;
+            }
+
+
+
+
+            using (SqlConnection conn = new SqlConnection("Server=ASUS_2023;Database=Final_ProjectDB;Trusted_Connection=True;"))
+            {
+
+                conn.Open();
+
+                // 1. Check if username already exists
+                string usernameQuery = "SELECT COUNT(*) FROM Students WHERE Username = @Username;";
+                using (SqlCommand checkUsername = new SqlCommand(usernameQuery, conn))
+                {
+                    checkUsername.Parameters.AddWithValue("@Username", username);
+                    int usernameExists = (int)checkUsername.ExecuteScalar();
+
+                    if (usernameExists > 0)
+                    {
+                        MessageBox.Show("Username is already taken.", "Duplicate Entry", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        allowed = false;
+                        return;
+                    }
+                    
+                }
+
+                // 2. Check if full name (first + last) already exists
+                string nameQuery = "SELECT COUNT(*) FROM Students WHERE FirstName = @FirstName AND LastName = @LastName;";
+                using (SqlCommand checkName = new SqlCommand(nameQuery, conn))
+                {
+                    checkName.Parameters.AddWithValue("@FirstName", firstname);
+                    checkName.Parameters.AddWithValue("@LastName", lastname);
+                    int nameExists = (int)checkName.ExecuteScalar();
+
+                    if (nameExists > 0)
+                    {
+                        MessageBox.Show("A student with the same full name already exists.", "Duplicate Entry", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        allowed = false;
+                        return;
+                    }
+                    
+                }
+
+                // Continue with insert if no duplicate
+            }
+
 
 
 
@@ -144,16 +200,25 @@ namespace SOFTDEV_FINAL_PROJECT
             else
             {
 
-                if (age <= 18)
+                if (age <= 17)
                 {
-                    MessageBox.Show($"{firstname},  ARE YOU SURE?? ", "Age Status");
-                    allowed = true;
+                    DialogResult result = MessageBox.Show($"{firstname}, ARE YOU SURE??", "Age Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        allowed = true;
+                    }
+                    else
+                    {
+                        allowed = false;
+                        return; // Stop execution and let user edit
+                    }
                 }
                 else
                 {
-
-
+                    allowed = true; // No confirmation needed for older users
                 }
+                
             }
 
 
@@ -202,7 +267,7 @@ namespace SOFTDEV_FINAL_PROJECT
                             cmd.ExecuteNonQuery(); // Execute insert into Students
 
 
-                                                   // Get the newly inserted user's ID
+                            // Get the newly inserted user's ID
 
 
                             // Now insert into Quizzes table with default values
@@ -218,6 +283,16 @@ namespace SOFTDEV_FINAL_PROJECT
 
 
                             MessageBox.Show("User and quiz record created successfully!");
+
+                            // RETURN TO BLANK
+
+                             textBoxFirstName.Text = "";
+                            textBoxLastname.Text = "";
+                            textBoxAge.Text = "";
+                             comboBoxGender.Text = "";
+                            comboBoxProgram.Text = "";
+                             textbox_username.Text  = "";
+                            TextboxPassword.Text = "";
                         }
                     }
                 }
@@ -327,10 +402,6 @@ namespace SOFTDEV_FINAL_PROJECT
 
 
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void passworderror_Click(object sender, EventArgs e)
         {
@@ -340,8 +411,86 @@ namespace SOFTDEV_FINAL_PROJECT
         private void comboBoxProgram_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+
+
         }
 
-       
+
+        private void textBoxAge_TextChanged(object sender, EventArgs e)
+        {
+            if (!int.TryParse(textBoxAge.Text, out int age))
+            {
+                textBoxAge.Text = "";
+                return;
+            }
+
+            if (age > 100)
+            {
+
+                textBoxAge.Text = "";
+                return;
+            }
+        }
+
+        private void comboBoxGender_Leave(object sender, EventArgs e)
+        {
+
+            string[] allowedCourses = new string[]
+   {
+        "Computer Engineer", "Mechanical Engineer", "Electrical Engineer",
+        "Civil Engineer", "Combat Engineer",
+        "Information Technology (major in programming)",
+        "Information Technology (major in Networking)",
+        "Food Technology", "Education", "Tourism Management",
+        "Hotel Management", "Political Science", "Computer Science"
+   };
+
+            // Check if user input matches any course
+            if (!allowedCourses.Contains(comboBoxProgram.Text))
+            {
+                comboBoxProgram.Text = "";
+            }
+
+
+
+        }
+
+        private void comboBoxProgram_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxProgram_TextChanged(object sender, EventArgs e)
+        {
+            string[] allowedCourses = new string[]
+   {
+        "Computer Engineer", "Mechanical Engineer", "Electrical Engineer",
+        "Civil Engineer", "Combat Engineer",
+        "Information Technology (major in programming)",
+        "Information Technology (major in Networking)",
+        "Food Technology", "Education", "Tourism Management",
+        "Hotel Management", "Political Science", "Computer Science"
+   };
+
+            // Check if user input matches any course
+            if (!allowedCourses.Contains(comboBoxProgram.Text))
+            {
+                comboBoxProgram.Text = "";
+            }
+        }
+
+        private void comboBoxGender_TextChanged(object sender, EventArgs e)
+        {
+            string[] allowedGenders = new string[]
+    {
+        "Male", "Female", "LGBTQIA", "Rather not say"
+    };
+
+            if (!allowedGenders.Contains(comboBoxGender.Text))
+            {
+                comboBoxGender.Text = "";
+            }
+
+        }
     }
 }

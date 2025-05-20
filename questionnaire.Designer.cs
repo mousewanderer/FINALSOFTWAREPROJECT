@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(questionnaire));
             rbA = new RadioButton();
             rbB = new RadioButton();
             rbC = new RadioButton();
@@ -36,17 +38,18 @@
             QUESTION_Label = new Label();
             SCORELABEL = new Label();
             lblFeedback = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // rbA
             // 
             rbA.AutoSize = true;
-            rbA.Font = new Font("Segoe UI", 12F);
+            rbA.Font = new Font("Segoe UI", 13.8F);
             rbA.ForeColor = Color.FromArgb(40, 122, 116);
-            rbA.Location = new Point(36, 133);
+            rbA.Location = new Point(46, 183);
             rbA.Margin = new Padding(4);
             rbA.Name = "rbA";
-            rbA.Size = new Size(70, 32);
+            rbA.Size = new Size(78, 35);
             rbA.TabIndex = 0;
             rbA.TabStop = true;
             rbA.Text = " rbA";
@@ -55,12 +58,12 @@
             // rbB
             // 
             rbB.AutoSize = true;
-            rbB.Font = new Font("Segoe UI", 12F);
+            rbB.Font = new Font("Segoe UI", 13.8F);
             rbB.ForeColor = Color.FromArgb(40, 122, 116);
-            rbB.Location = new Point(36, 175);
+            rbB.Location = new Point(46, 225);
             rbB.Margin = new Padding(4);
             rbB.Name = "rbB";
-            rbB.Size = new Size(149, 32);
+            rbB.Size = new Size(168, 35);
             rbB.TabIndex = 1;
             rbB.TabStop = true;
             rbB.Text = "radioButton2";
@@ -69,12 +72,12 @@
             // rbC
             // 
             rbC.AutoSize = true;
-            rbC.Font = new Font("Segoe UI", 12F);
+            rbC.Font = new Font("Segoe UI", 13.8F);
             rbC.ForeColor = Color.FromArgb(40, 122, 116);
-            rbC.Location = new Point(36, 217);
+            rbC.Location = new Point(46, 267);
             rbC.Margin = new Padding(4);
             rbC.Name = "rbC";
-            rbC.Size = new Size(149, 32);
+            rbC.Size = new Size(168, 35);
             rbC.TabIndex = 2;
             rbC.TabStop = true;
             rbC.Text = "radioButton3";
@@ -83,12 +86,12 @@
             // rbD
             // 
             rbD.AutoSize = true;
-            rbD.Font = new Font("Segoe UI", 12F);
+            rbD.Font = new Font("Segoe UI", 13.8F);
             rbD.ForeColor = Color.FromArgb(40, 122, 116);
-            rbD.Location = new Point(36, 259);
+            rbD.Location = new Point(46, 309);
             rbD.Margin = new Padding(4);
             rbD.Name = "rbD";
-            rbD.Size = new Size(149, 32);
+            rbD.Size = new Size(168, 35);
             rbD.TabIndex = 3;
             rbD.TabStop = true;
             rbD.Text = "radioButton4";
@@ -97,7 +100,7 @@
             // NEXTbutton
             // 
             NEXTbutton.ForeColor = Color.FromArgb(40, 122, 116);
-            NEXTbutton.Location = new Point(25, 328);
+            NEXTbutton.Location = new Point(46, 370);
             NEXTbutton.Margin = new Padding(4);
             NEXTbutton.Name = "NEXTbutton";
             NEXTbutton.Size = new Size(129, 41);
@@ -109,40 +112,51 @@
             // QUESTION_Label
             // 
             QUESTION_Label.AutoSize = true;
+            QUESTION_Label.BackColor = Color.Transparent;
+            QUESTION_Label.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             QUESTION_Label.ForeColor = Color.FromArgb(40, 122, 116);
-            QUESTION_Label.Location = new Point(36, 37);
+            QUESTION_Label.Location = new Point(46, 114);
             QUESTION_Label.Margin = new Padding(4, 0, 4, 0);
             QUESTION_Label.Name = "QUESTION_Label";
-            QUESTION_Label.Size = new Size(118, 28);
+            QUESTION_Label.Size = new Size(165, 38);
             QUESTION_Label.TabIndex = 5;
             QUESTION_Label.Text = "QUESTIONS";
             // 
             // SCORELABEL
             // 
             SCORELABEL.AutoSize = true;
+            SCORELABEL.BackColor = Color.Transparent;
             SCORELABEL.ForeColor = Color.FromArgb(40, 122, 116);
-            SCORELABEL.Location = new Point(749, 9);
+            SCORELABEL.Location = new Point(775, 44);
             SCORELABEL.Name = "SCORELABEL";
-            SCORELABEL.Size = new Size(71, 28);
+            SCORELABEL.Size = new Size(0, 28);
             SCORELABEL.TabIndex = 6;
-            SCORELABEL.Text = "SCORE";
+            SCORELABEL.Click += SCORELABEL_Click;
             // 
             // lblFeedback
             // 
             lblFeedback.AutoSize = true;
+            lblFeedback.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblFeedback.ForeColor = Color.FromArgb(40, 122, 116);
-            lblFeedback.Location = new Point(731, 357);
+            lblFeedback.Location = new Point(742, 114);
             lblFeedback.Name = "lblFeedback";
-            lblFeedback.Size = new Size(117, 28);
+            lblFeedback.Size = new Size(104, 28);
             lblFeedback.TabIndex = 7;
-            lblFeedback.Text = "lblFeedback";
+            lblFeedback.Text = "TIME: 60s";
+            lblFeedback.Click += lblFeedback_Click;
+            // 
+            // timer1
+            // 
+            timer1.Tick += timer1_Tick;
             // 
             // questionnaire
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(209, 216, 246);
-            ClientSize = new Size(901, 404);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Zoom;
+            ClientSize = new Size(884, 500);
             Controls.Add(lblFeedback);
             Controls.Add(SCORELABEL);
             Controls.Add(QUESTION_Label);
@@ -151,8 +165,9 @@
             Controls.Add(rbC);
             Controls.Add(rbB);
             Controls.Add(rbA);
+            DoubleBuffered = true;
             Font = new Font("Segoe UI", 12F);
-            FormBorderStyle = FormBorderStyle.SizableToolWindow;
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
             Name = "questionnaire";
             Text = "questionnaire";
@@ -171,5 +186,6 @@
         private Label QUESTION_Label;
         private Label SCORELABEL;
         private Label lblFeedback;
+        private System.Windows.Forms.Timer timer1;
     }
 }

@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -85,19 +86,27 @@ namespace SOFTDEV_FINAL_PROJECT
                                                       PHY1SCOREraw >= passingScore;
                                 bool passedSECONDARY = MATH2SCOREraw >= passingScoreSecondary || INFO2SCOREraw >= passingScoreSecondary;
 
+                                // must all passed quizzes
                                 bool passedALL = MATH1SCOREraw >= passingScore &&
                                                       INFO1SCOREraw >= passingScore &&
                                                       BIO1SCOREraw >= passingScore &&
                                                        MATH2SCOREraw >= passingScoreSecondary &&
                                                        INFO2SCOREraw >= passingScoreSecondary &&
                                                        PHY1SCOREraw >= passingScore;
-
+                                // ATLEAST 1 perfect quiz
                                 bool PERFECTED = MATH1SCOREraw >= maxscore ||
                                                       INFO1SCOREraw >= maxscore ||
                                                       BIO1SCOREraw >= maxscore ||
                                                       PHY1SCOREraw >= maxscore ||
                                                       MATH2SCOREraw >= maxScoreSecondary ||
                                                        INFO2SCOREraw >= maxScoreSecondary;
+
+                                // PERFECTED both INFO1 and 2
+                                bool coding = INFO1SCOREraw >= maxscore && INFO2SCOREraw >= maxScoreSecondary;
+
+
+                                // PERFECTED in biology
+                                bool nature = BIO1SCOREraw >= maxscore ;
 
                                 // PASSED 1 quizzes
                                 if (passedAnyQuiz)
@@ -126,6 +135,16 @@ namespace SOFTDEV_FINAL_PROJECT
                                     //
 
                                     PERFECT();
+                                }
+
+                                if (coding)
+                                {
+                                    CODINGEXPERT();
+                                }
+
+                                if (nature)
+                                {
+                                    NATURELOVER();
                                 }
 
 
@@ -157,7 +176,7 @@ namespace SOFTDEV_FINAL_PROJECT
             string imagePath = Path.Combine(Application.StartupPath, "ACHIEVEMENTS", "PERFECT1.png");
             PERFECT_1_quiz.BackgroundImage = Image.FromFile(imagePath);
 
-            PASSED_2_QUIZZES.BackgroundImageLayout = ImageLayout.Zoom; // Ensures the image is zoomed to fit the PictureBox
+            PERFECT_1_quiz.BackgroundImageLayout = ImageLayout.Zoom; // Ensures the image is zoomed to fit the PictureBox
 
             // Optionally, change the border color (if you want to make it more visually prominent)
             PERFECT_1_quiz.BorderStyle = BorderStyle.FixedSingle; // Makes a border visible
@@ -216,6 +235,39 @@ namespace SOFTDEV_FINAL_PROJECT
             // Optionally, change the border color (if you want to make it more visually prominent)
             PASSED_1_quiz.BorderStyle = BorderStyle.FixedSingle; // Makes a border visible
             PASSED_1_quiz.BackColor = Color.Green; // Change the background color to green (you can choose any color you prefer)
+        }
+
+        private void NATURELOVER()
+        {
+
+            BIOLOGY.BackgroundImage = null;
+            // Set the background image
+
+            string imagePath = Path.Combine(Application.StartupPath, "ACHIEVEMENTS", "BIOLOGY.png");
+            BIOLOGY.BackgroundImage = Image.FromFile(imagePath);
+
+            BIOLOGY.BackgroundImageLayout = ImageLayout.Zoom; // Ensures the image is zoomed to fit the PictureBox
+
+            // Optionally, change the border color (if you want to make it more visually prominent)
+            BIOLOGY.BorderStyle = BorderStyle.FixedSingle; // Makes a border visible
+            BIOLOGY.BackColor = Color.LightGreen; // Change the background color to green (you can choose any color you prefer)
+        }
+
+
+        private void CODINGEXPERT()
+        {
+
+            CODING_EXPERT.BackgroundImage = null;
+            // Set the background image
+
+            string imagePath = Path.Combine(Application.StartupPath, "ACHIEVEMENTS", "CODINGPRO.png");
+            CODING_EXPERT.BackgroundImage = Image.FromFile(imagePath);
+
+            CODING_EXPERT.BackgroundImageLayout = ImageLayout.Zoom; // Ensures the image is zoomed to fit the PictureBox
+
+            // Optionally, change the border color (if you want to make it more visually prominent)
+            CODING_EXPERT.BorderStyle = BorderStyle.FixedSingle; // Makes a border visible
+            CODING_EXPERT.BackColor = Color.SkyBlue; // Change the background color to green (you can choose any color you prefer)
         }
 
 

@@ -47,7 +47,7 @@
             textBoxFirstName.BackColor = Color.FromArgb(193, 219, 217);
             textBoxFirstName.BorderStyle = BorderStyle.FixedSingle;
             textBoxFirstName.ForeColor = Color.FromArgb(40, 122, 116);
-            textBoxFirstName.Location = new Point(375, 240);
+            textBoxFirstName.Location = new Point(309, 177);
             textBoxFirstName.Name = "textBoxFirstName";
             textBoxFirstName.Size = new Size(183, 27);
             textBoxFirstName.TabIndex = 1;
@@ -57,31 +57,37 @@
             textBoxAge.BackColor = Color.FromArgb(193, 219, 217);
             textBoxAge.BorderStyle = BorderStyle.FixedSingle;
             textBoxAge.ForeColor = Color.FromArgb(40, 122, 116);
-            textBoxAge.Location = new Point(375, 339);
+            textBoxAge.Location = new Point(309, 337);
             textBoxAge.Name = "textBoxAge";
             textBoxAge.Size = new Size(183, 27);
             textBoxAge.TabIndex = 2;
+            textBoxAge.TextChanged += textBoxAge_TextChanged;
             // 
             // comboBoxGender
             // 
             comboBoxGender.BackColor = Color.FromArgb(193, 219, 217);
             comboBoxGender.ForeColor = Color.FromArgb(40, 122, 116);
             comboBoxGender.FormattingEnabled = true;
-            comboBoxGender.Location = new Point(375, 384);
+            comboBoxGender.Location = new Point(309, 424);
             comboBoxGender.Name = "comboBoxGender";
             comboBoxGender.Size = new Size(183, 28);
             comboBoxGender.TabIndex = 3;
             comboBoxGender.SelectedIndexChanged += comboBoxProgram_SelectedIndexChanged;
+            comboBoxGender.TextChanged += comboBoxGender_TextChanged;
+            comboBoxGender.Leave += comboBoxGender_Leave;
             // 
             // Create_button
             // 
+            Create_button.BackColor = Color.FromArgb(193, 219, 217);
+            Create_button.FlatStyle = FlatStyle.Popup;
+            Create_button.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold);
             Create_button.ForeColor = Color.FromArgb(40, 122, 116);
-            Create_button.Location = new Point(714, 482);
+            Create_button.Location = new Point(628, 464);
             Create_button.Name = "Create_button";
-            Create_button.Size = new Size(94, 29);
+            Create_button.Size = new Size(100, 34);
             Create_button.TabIndex = 7;
             Create_button.Text = "CREATE";
-            Create_button.UseVisualStyleBackColor = true;
+            Create_button.UseVisualStyleBackColor = false;
             Create_button.Click += Create_button_Click;
             // 
             // textbox_username
@@ -89,9 +95,9 @@
             textbox_username.BackColor = Color.FromArgb(193, 219, 217);
             textbox_username.BorderStyle = BorderStyle.FixedSingle;
             textbox_username.ForeColor = Color.FromArgb(40, 122, 116);
-            textbox_username.Location = new Point(724, 249);
+            textbox_username.Location = new Point(621, 263);
             textbox_username.Name = "textbox_username";
-            textbox_username.Size = new Size(183, 27);
+            textbox_username.Size = new Size(233, 27);
             textbox_username.TabIndex = 9;
             textbox_username.TextChanged += textbox_username_TextChanged;
             // 
@@ -100,21 +106,24 @@
             TextboxPassword.BackColor = Color.FromArgb(193, 219, 217);
             TextboxPassword.BorderStyle = BorderStyle.FixedSingle;
             TextboxPassword.ForeColor = Color.FromArgb(40, 122, 116);
-            TextboxPassword.Location = new Point(724, 330);
+            TextboxPassword.Location = new Point(621, 337);
             TextboxPassword.Name = "TextboxPassword";
-            TextboxPassword.Size = new Size(183, 27);
+            TextboxPassword.Size = new Size(233, 27);
             TextboxPassword.TabIndex = 11;
             TextboxPassword.TextChanged += TextboxPassword_TextChanged;
             // 
             // Return_button
             // 
-            Return_button.ForeColor = Color.FromArgb(74, 123, 123);
-            Return_button.Location = new Point(851, 482);
+            Return_button.BackColor = Color.FromArgb(193, 219, 217);
+            Return_button.FlatStyle = FlatStyle.Popup;
+            Return_button.Font = new Font("Perpetua Titling MT", 7.8F, FontStyle.Bold);
+            Return_button.ForeColor = Color.FromArgb(40, 122, 116);
+            Return_button.Location = new Point(752, 464);
             Return_button.Name = "Return_button";
-            Return_button.Size = new Size(94, 29);
+            Return_button.Size = new Size(102, 34);
             Return_button.TabIndex = 13;
             Return_button.Text = "RETURN";
-            Return_button.UseVisualStyleBackColor = true;
+            Return_button.UseVisualStyleBackColor = false;
             Return_button.Click += Return_button_Click;
             // 
             // textBoxLastname
@@ -122,7 +131,7 @@
             textBoxLastname.BackColor = Color.FromArgb(193, 219, 217);
             textBoxLastname.BorderStyle = BorderStyle.FixedSingle;
             textBoxLastname.ForeColor = Color.FromArgb(40, 122, 116);
-            textBoxLastname.Location = new Point(375, 290);
+            textBoxLastname.Location = new Point(309, 254);
             textBoxLastname.Name = "textBoxLastname";
             textBoxLastname.Size = new Size(183, 27);
             textBoxLastname.TabIndex = 15;
@@ -132,34 +141,38 @@
             comboBoxProgram.BackColor = Color.FromArgb(193, 219, 217);
             comboBoxProgram.ForeColor = Color.FromArgb(40, 122, 116);
             comboBoxProgram.FormattingEnabled = true;
-            comboBoxProgram.Location = new Point(375, 428);
+            comboBoxProgram.Location = new Point(621, 176);
             comboBoxProgram.Name = "comboBoxProgram";
-            comboBoxProgram.Size = new Size(183, 28);
+            comboBoxProgram.Size = new Size(233, 28);
             comboBoxProgram.TabIndex = 17;
             comboBoxProgram.SelectedIndexChanged += comboBoxProgram_SelectedIndexChanged;
+            comboBoxProgram.TextChanged += comboBoxProgram_TextChanged;
+            comboBoxProgram.Click += comboBoxProgram_Click;
             // 
             // labelPasswordError
             // 
             labelPasswordError.AutoSize = true;
             labelPasswordError.BackColor = Color.Transparent;
+            labelPasswordError.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelPasswordError.ForeColor = Color.Red;
-            labelPasswordError.Location = new Point(724, 360);
+            labelPasswordError.Location = new Point(515, 377);
             labelPasswordError.Name = "labelPasswordError";
-            labelPasswordError.Size = new Size(154, 20);
+            labelPasswordError.Size = new Size(143, 17);
             labelPasswordError.TabIndex = 19;
-            labelPasswordError.Text = "Please Enter Password";
+            labelPasswordError.Text = "Please enter password.";
             labelPasswordError.Click += passworderror_Click;
             // 
             // usernamevalid
             // 
             usernamevalid.AutoSize = true;
             usernamevalid.BackColor = Color.Transparent;
+            usernamevalid.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             usernamevalid.ForeColor = Color.Red;
-            usernamevalid.Location = new Point(724, 281);
+            usernamevalid.Location = new Point(511, 293);
             usernamevalid.Name = "usernamevalid";
-            usernamevalid.Size = new Size(159, 20);
+            usernamevalid.Size = new Size(143, 17);
             usernamevalid.TabIndex = 20;
-            usernamevalid.Text = "Please Enter Username";
+            usernamevalid.Text = "Please enter username.";
             // 
             // CREATE_form
             // 

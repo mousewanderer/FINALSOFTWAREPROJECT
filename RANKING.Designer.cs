@@ -28,21 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RANKING));
+            listViewOverall = new ListView();
+            listViewMath = new ListView();
             SuspendLayout();
+            // 
+            // listViewOverall
+            // 
+            listViewOverall.Location = new Point(425, 170);
+            listViewOverall.Name = "listViewOverall";
+            listViewOverall.Size = new Size(350, 345);
+            listViewOverall.TabIndex = 1;
+            listViewOverall.UseCompatibleStateImageBehavior = false;
+            // 
+            // listViewMath
+            // 
+            listViewMath.Location = new Point(33, 170);
+            listViewMath.Name = "listViewMath";
+            listViewMath.Size = new Size(350, 345);
+            listViewMath.TabIndex = 2;
+            listViewMath.UseCompatibleStateImageBehavior = false;
             // 
             // RANKING
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(193, 219, 217);
-            BackgroundImageLayout = ImageLayout.None;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(820, 600);
+            Controls.Add(listViewMath);
+            Controls.Add(listViewOverall);
+            DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Name = "RANKING";
             Text = "RANKING";
+            Load += RANKING_Load;
             ResumeLayout(false);
         }
 
         #endregion
+
+        private ListView listViewOverall;
+        private ListView listViewMath;
     }
 }

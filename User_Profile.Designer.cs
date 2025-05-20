@@ -58,7 +58,7 @@
             Userprofilepicture.BackColor = Color.FromArgb(209, 216, 246);
             Userprofilepicture.Location = new Point(94, 144);
             Userprofilepicture.Name = "Userprofilepicture";
-            Userprofilepicture.Size = new Size(89, 89);
+            Userprofilepicture.Size = new Size(100, 102);
             Userprofilepicture.TabIndex = 6;
             Userprofilepicture.TabStop = false;
             Userprofilepicture.Click += Userprofilepicture_Click;
@@ -142,7 +142,7 @@
             Gender.BackColor = Color.FromArgb(40, 122, 116);
             Gender.Font = new Font("Segoe UI", 12F);
             Gender.ForeColor = SystemColors.ButtonFace;
-            Gender.Location = new Point(190, 480);
+            Gender.Location = new Point(190, 476);
             Gender.Name = "Gender";
             Gender.Size = new Size(80, 28);
             Gender.TabIndex = 13;

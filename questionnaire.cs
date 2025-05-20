@@ -23,6 +23,7 @@ namespace SOFTDEV_FINAL_PROJECT
         private string studentID;
         private string quizColumn = "";
 
+        bool bypassAnswerCheck = false;
 
         public questionnaire(string locate, string name, string id)
         {
@@ -34,8 +35,8 @@ namespace SOFTDEV_FINAL_PROJECT
         }
 
 
+        int countdownTime = 60; // 60 second
 
-       
 
 
         private void questionnaire_Load(object sender, EventArgs e)
@@ -44,6 +45,10 @@ namespace SOFTDEV_FINAL_PROJECT
             questions = LoadQuestions(CURRENT_QUIZ);
             Shuffle(questions);
             DisplayQuestion();
+            countdownTime = 60; // Start from 60 seconds loading problems
+            lblFeedback.Text = countdownTime.ToString();
+            timer1.Interval = 1000; // 1 second
+            timer1.Start();
         }
 
 
@@ -63,7 +68,7 @@ namespace SOFTDEV_FINAL_PROJECT
         int currentQuestionIndex = 0;
         int score = 0;
         int currentIndex = 0;
-      
+
 
 
 
@@ -78,7 +83,7 @@ namespace SOFTDEV_FINAL_PROJECT
             }
 
             var q = questions[currentIndex];
-            QUESTION_Label.Text = $"Q{currentIndex + 1}: {q.Text}";
+            QUESTION_Label.Text = $"{currentIndex + 1}: {q.Text}";
 
             var randomized = new List<(string Label, string Choice)>(q.Choices);
             Shuffle(randomized);
@@ -145,26 +150,28 @@ namespace SOFTDEV_FINAL_PROJECT
             if (currentIndex < questions.Count)
             {
                 var selected = new[] { rbA, rbB, rbC, rbD }.FirstOrDefault(rb => rb.Checked);
-                if (selected == null)
+
+                if (selected == null && !bypassAnswerCheck)
                 {
                     MessageBox.Show("Select an answer.");
                     return;
                 }
+                countdownTime = 61; //seconds loading problems
 
                 var q = questions[currentIndex];
                 var correctChoice = q.Choices.Find(c => c.Label == q.CorrectAnswer).Choice;
 
                 if (selected.Text == correctChoice)
                 {
-                    lblFeedback.Text = " OH whwat nnnan";
+
                     score++;
                 }
                 else
                 {
-                    lblFeedback.Text = $" OH whwat";
+
                 }
 
-                SCORELABEL.Text = $"Score: {score}/{questions.Count}";
+                SCORELABEL.Text = $"{score}/{questions.Count}";
                 currentIndex++;
 
                 if (currentIndex == questions.Count)
@@ -200,10 +207,10 @@ namespace SOFTDEV_FINAL_PROJECT
 
                 Quizbot quiz = new Quizbot(studentName, studentID);
 
-                
+
 
                 this.Hide();
-                
+
             }
         }
 
@@ -277,6 +284,38 @@ namespace SOFTDEV_FINAL_PROJECT
             }
         }
 
+        private void lblFeedback_Click(object sender, EventArgs e)
+        {
 
+        }
+
+
+
+        // TIME FOR THE LABEL MODIFY
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            countdownTime--;
+            lblFeedback.Text = countdownTime.ToString() + "s";
+
+            if (countdownTime <= 0)
+            {
+                timer1.Stop();
+                bypassAnswerCheck = true; // tell the button to skip validation
+                lblFeedback.Text = "Time's up!";
+                // NEXT QUESTION
+
+                NEXTbutton.PerformClick();
+
+                bypassAnswerCheck = false;
+
+            }
+
+
+        }
+
+        private void SCORELABEL_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
