@@ -69,5 +69,15 @@ namespace SOFTDEV_FINAL_PROJECT.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Green_Modern_Business_Opportunity_Presentation__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Green Modern Business Opportunity Presentation (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
