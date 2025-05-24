@@ -38,6 +38,7 @@
             SearchTextbox = new TextBox();
             Search_button = new Button();
             MAINPanel = new Panel();
+            UPDATEBUTTON = new Button();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
             SuspendLayout();
             // 
@@ -49,8 +50,9 @@
             // Backbutto
             // 
             Backbutto.BackColor = Color.Teal;
+            Backbutto.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             Backbutto.ForeColor = Color.White;
-            Backbutto.Location = new Point(151, 482);
+            Backbutto.Location = new Point(140, 437);
             Backbutto.Name = "Backbutto";
             Backbutto.Size = new Size(94, 29);
             Backbutto.TabIndex = 0;
@@ -61,10 +63,11 @@
             // Profile_button
             // 
             Profile_button.BackColor = Color.Teal;
+            Profile_button.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             Profile_button.ForeColor = Color.Transparent;
             Profile_button.Image = (Image)resources.GetObject("Profile_button.Image");
             Profile_button.ImageAlign = ContentAlignment.MiddleLeft;
-            Profile_button.Location = new Point(12, 174);
+            Profile_button.Location = new Point(12, 148);
             Profile_button.Name = "Profile_button";
             Profile_button.Size = new Size(240, 64);
             Profile_button.TabIndex = 7;
@@ -75,10 +78,11 @@
             // quizbotbutton
             // 
             quizbotbutton.BackColor = Color.Teal;
+            quizbotbutton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             quizbotbutton.ForeColor = Color.Transparent;
             quizbotbutton.Image = (Image)resources.GetObject("quizbotbutton.Image");
             quizbotbutton.ImageAlign = ContentAlignment.MiddleLeft;
-            quizbotbutton.Location = new Point(12, 314);
+            quizbotbutton.Location = new Point(12, 288);
             quizbotbutton.Name = "quizbotbutton";
             quizbotbutton.Size = new Size(240, 73);
             quizbotbutton.TabIndex = 5;
@@ -89,10 +93,11 @@
             // AchievementsButton
             // 
             AchievementsButton.BackColor = Color.Teal;
+            AchievementsButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             AchievementsButton.ForeColor = Color.Transparent;
             AchievementsButton.Image = (Image)resources.GetObject("AchievementsButton.Image");
             AchievementsButton.ImageAlign = ContentAlignment.MiddleLeft;
-            AchievementsButton.Location = new Point(12, 244);
+            AchievementsButton.Location = new Point(12, 218);
             AchievementsButton.Name = "AchievementsButton";
             AchievementsButton.Size = new Size(240, 64);
             AchievementsButton.TabIndex = 5;
@@ -103,10 +108,11 @@
             // Rankingbutton
             // 
             Rankingbutton.BackColor = Color.Teal;
+            Rankingbutton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             Rankingbutton.ForeColor = Color.Transparent;
             Rankingbutton.Image = (Image)resources.GetObject("Rankingbutton.Image");
             Rankingbutton.ImageAlign = ContentAlignment.MiddleLeft;
-            Rankingbutton.Location = new Point(12, 393);
+            Rankingbutton.Location = new Point(12, 367);
             Rankingbutton.Name = "Rankingbutton";
             Rankingbutton.Size = new Size(240, 64);
             Rankingbutton.TabIndex = 6;
@@ -142,6 +148,19 @@
             MAINPanel.Size = new Size(820, 600);
             MAINPanel.TabIndex = 0;
             // 
+            // UPDATEBUTTON
+            // 
+            UPDATEBUTTON.BackColor = Color.Teal;
+            UPDATEBUTTON.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            UPDATEBUTTON.ForeColor = Color.White;
+            UPDATEBUTTON.Location = new Point(27, 437);
+            UPDATEBUTTON.Name = "UPDATEBUTTON";
+            UPDATEBUTTON.Size = new Size(94, 29);
+            UPDATEBUTTON.TabIndex = 8;
+            UPDATEBUTTON.Text = "Update";
+            UPDATEBUTTON.UseVisualStyleBackColor = false;
+            UPDATEBUTTON.Click += UPDATEBUTTON_Click;
+            // 
             // DASHBOARD_form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -150,6 +169,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(1100, 620);
+            Controls.Add(UPDATEBUTTON);
             Controls.Add(Backbutto);
             Controls.Add(Rankingbutton);
             Controls.Add(Search_button);
@@ -178,5 +198,6 @@
         private Button Rankingbutton;
         private Button AchievementsButton;
         private Button Backbutto;
+        private Button UPDATEBUTTON;
     }
 }

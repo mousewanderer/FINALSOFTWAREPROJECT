@@ -138,7 +138,7 @@
             lblFeedback.AutoSize = true;
             lblFeedback.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblFeedback.ForeColor = Color.FromArgb(40, 122, 116);
-            lblFeedback.Location = new Point(742, 114);
+            lblFeedback.Location = new Point(731, 376);
             lblFeedback.Name = "lblFeedback";
             lblFeedback.Size = new Size(104, 28);
             lblFeedback.TabIndex = 7;

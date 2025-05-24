@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LOGINFORM));
             textBoxUsername = new TextBox();
             LABELUSERNAME = new Label();
             PASSWORDLABEL = new Label();
@@ -40,7 +41,8 @@
             // 
             // textBoxUsername
             // 
-            textBoxUsername.Location = new Point(575, 256);
+            textBoxUsername.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            textBoxUsername.Location = new Point(546, 260);
             textBoxUsername.Name = "textBoxUsername";
             textBoxUsername.Size = new Size(203, 27);
             textBoxUsername.TabIndex = 3;
@@ -49,10 +51,10 @@
             // 
             LABELUSERNAME.AutoSize = true;
             LABELUSERNAME.BackColor = Color.Transparent;
-            LABELUSERNAME.Font = new Font("Segoe UI", 12F);
-            LABELUSERNAME.Location = new Point(450, 252);
+            LABELUSERNAME.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            LABELUSERNAME.Location = new Point(402, 256);
             LABELUSERNAME.Name = "LABELUSERNAME";
-            LABELUSERNAME.Size = new Size(108, 28);
+            LABELUSERNAME.Size = new Size(115, 28);
             LABELUSERNAME.TabIndex = 4;
             LABELUSERNAME.Text = "Username :";
             // 
@@ -60,16 +62,17 @@
             // 
             PASSWORDLABEL.AutoSize = true;
             PASSWORDLABEL.BackColor = Color.Transparent;
-            PASSWORDLABEL.Font = new Font("Segoe UI", 12F);
-            PASSWORDLABEL.Location = new Point(456, 307);
+            PASSWORDLABEL.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            PASSWORDLABEL.Location = new Point(408, 307);
             PASSWORDLABEL.Name = "PASSWORDLABEL";
-            PASSWORDLABEL.Size = new Size(102, 28);
+            PASSWORDLABEL.Size = new Size(108, 28);
             PASSWORDLABEL.TabIndex = 5;
             PASSWORDLABEL.Text = "Password :";
             // 
             // textBoxPassword
             // 
-            textBoxPassword.Location = new Point(575, 311);
+            textBoxPassword.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            textBoxPassword.Location = new Point(546, 307);
             textBoxPassword.Name = "textBoxPassword";
             textBoxPassword.PasswordChar = '*';
             textBoxPassword.Size = new Size(203, 27);
@@ -77,7 +80,8 @@
             // 
             // buttonCREATE
             // 
-            buttonCREATE.Location = new Point(591, 364);
+            buttonCREATE.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
+            buttonCREATE.Location = new Point(639, 381);
             buttonCREATE.Name = "buttonCREATE";
             buttonCREATE.Size = new Size(94, 29);
             buttonCREATE.TabIndex = 7;
@@ -87,7 +91,8 @@
             // 
             // buttonLogin
             // 
-            buttonLogin.Location = new Point(464, 364);
+            buttonLogin.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
+            buttonLogin.Location = new Point(459, 381);
             buttonLogin.Name = "buttonLogin";
             buttonLogin.Size = new Size(94, 29);
             buttonLogin.TabIndex = 8;
@@ -111,9 +116,11 @@
             // forgotpassword
             // 
             forgotpassword.AutoSize = true;
-            forgotpassword.Location = new Point(515, 409);
+            forgotpassword.BackColor = Color.Transparent;
+            forgotpassword.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
+            forgotpassword.Location = new Point(534, 447);
             forgotpassword.Name = "forgotpassword";
-            forgotpassword.Size = new Size(120, 20);
+            forgotpassword.Size = new Size(138, 23);
             forgotpassword.TabIndex = 9;
             forgotpassword.TabStop = true;
             forgotpassword.Text = "Forgot password";
@@ -122,7 +129,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.Green_Modern_Business_Opportunity_Presentation;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1202, 576);
             Controls.Add(buttonexit);

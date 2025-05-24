@@ -46,31 +46,34 @@
             // 
             textBoxFirstName.BackColor = Color.FromArgb(193, 219, 217);
             textBoxFirstName.BorderStyle = BorderStyle.FixedSingle;
+            textBoxFirstName.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
             textBoxFirstName.ForeColor = Color.FromArgb(40, 122, 116);
-            textBoxFirstName.Location = new Point(309, 177);
+            textBoxFirstName.Location = new Point(309, 263);
             textBoxFirstName.Name = "textBoxFirstName";
-            textBoxFirstName.Size = new Size(183, 27);
+            textBoxFirstName.Size = new Size(183, 30);
             textBoxFirstName.TabIndex = 1;
             // 
             // textBoxAge
             // 
             textBoxAge.BackColor = Color.FromArgb(193, 219, 217);
             textBoxAge.BorderStyle = BorderStyle.FixedSingle;
+            textBoxAge.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
             textBoxAge.ForeColor = Color.FromArgb(40, 122, 116);
-            textBoxAge.Location = new Point(309, 337);
+            textBoxAge.Location = new Point(309, 342);
             textBoxAge.Name = "textBoxAge";
-            textBoxAge.Size = new Size(183, 27);
+            textBoxAge.Size = new Size(183, 30);
             textBoxAge.TabIndex = 2;
             textBoxAge.TextChanged += textBoxAge_TextChanged;
             // 
             // comboBoxGender
             // 
             comboBoxGender.BackColor = Color.FromArgb(193, 219, 217);
+            comboBoxGender.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
             comboBoxGender.ForeColor = Color.FromArgb(40, 122, 116);
             comboBoxGender.FormattingEnabled = true;
-            comboBoxGender.Location = new Point(309, 424);
+            comboBoxGender.Location = new Point(309, 383);
             comboBoxGender.Name = "comboBoxGender";
-            comboBoxGender.Size = new Size(183, 28);
+            comboBoxGender.Size = new Size(183, 31);
             comboBoxGender.TabIndex = 3;
             comboBoxGender.SelectedIndexChanged += comboBoxProgram_SelectedIndexChanged;
             comboBoxGender.TextChanged += comboBoxGender_TextChanged;
@@ -94,10 +97,11 @@
             // 
             textbox_username.BackColor = Color.FromArgb(193, 219, 217);
             textbox_username.BorderStyle = BorderStyle.FixedSingle;
+            textbox_username.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
             textbox_username.ForeColor = Color.FromArgb(40, 122, 116);
-            textbox_username.Location = new Point(621, 263);
+            textbox_username.Location = new Point(628, 263);
             textbox_username.Name = "textbox_username";
-            textbox_username.Size = new Size(233, 27);
+            textbox_username.Size = new Size(233, 30);
             textbox_username.TabIndex = 9;
             textbox_username.TextChanged += textbox_username_TextChanged;
             // 
@@ -105,10 +109,11 @@
             // 
             TextboxPassword.BackColor = Color.FromArgb(193, 219, 217);
             TextboxPassword.BorderStyle = BorderStyle.FixedSingle;
+            TextboxPassword.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
             TextboxPassword.ForeColor = Color.FromArgb(40, 122, 116);
-            TextboxPassword.Location = new Point(621, 337);
+            TextboxPassword.Location = new Point(628, 350);
             TextboxPassword.Name = "TextboxPassword";
-            TextboxPassword.Size = new Size(233, 27);
+            TextboxPassword.Size = new Size(233, 30);
             TextboxPassword.TabIndex = 11;
             TextboxPassword.TextChanged += TextboxPassword_TextChanged;
             // 
@@ -130,20 +135,22 @@
             // 
             textBoxLastname.BackColor = Color.FromArgb(193, 219, 217);
             textBoxLastname.BorderStyle = BorderStyle.FixedSingle;
+            textBoxLastname.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
             textBoxLastname.ForeColor = Color.FromArgb(40, 122, 116);
-            textBoxLastname.Location = new Point(309, 254);
+            textBoxLastname.Location = new Point(309, 306);
             textBoxLastname.Name = "textBoxLastname";
-            textBoxLastname.Size = new Size(183, 27);
+            textBoxLastname.Size = new Size(183, 30);
             textBoxLastname.TabIndex = 15;
             // 
             // comboBoxProgram
             // 
             comboBoxProgram.BackColor = Color.FromArgb(193, 219, 217);
+            comboBoxProgram.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
             comboBoxProgram.ForeColor = Color.FromArgb(40, 122, 116);
             comboBoxProgram.FormattingEnabled = true;
-            comboBoxProgram.Location = new Point(621, 176);
+            comboBoxProgram.Location = new Point(309, 427);
             comboBoxProgram.Name = "comboBoxProgram";
-            comboBoxProgram.Size = new Size(233, 28);
+            comboBoxProgram.Size = new Size(183, 31);
             comboBoxProgram.TabIndex = 17;
             comboBoxProgram.SelectedIndexChanged += comboBoxProgram_SelectedIndexChanged;
             comboBoxProgram.TextChanged += comboBoxProgram_TextChanged;
@@ -155,7 +162,7 @@
             labelPasswordError.BackColor = Color.Transparent;
             labelPasswordError.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelPasswordError.ForeColor = Color.Red;
-            labelPasswordError.Location = new Point(515, 377);
+            labelPasswordError.Location = new Point(515, 388);
             labelPasswordError.Name = "labelPasswordError";
             labelPasswordError.Size = new Size(143, 17);
             labelPasswordError.TabIndex = 19;
@@ -168,7 +175,7 @@
             usernamevalid.BackColor = Color.Transparent;
             usernamevalid.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             usernamevalid.ForeColor = Color.Red;
-            usernamevalid.Location = new Point(511, 293);
+            usernamevalid.Location = new Point(515, 293);
             usernamevalid.Name = "usernamevalid";
             usernamevalid.Size = new Size(143, 17);
             usernamevalid.TabIndex = 20;

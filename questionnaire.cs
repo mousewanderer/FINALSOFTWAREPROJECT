@@ -37,6 +37,7 @@ namespace SOFTDEV_FINAL_PROJECT
 
         int countdownTime = 60; // 60 second
 
+      
 
 
         private void questionnaire_Load(object sender, EventArgs e)
@@ -46,7 +47,7 @@ namespace SOFTDEV_FINAL_PROJECT
             Shuffle(questions);
             DisplayQuestion();
             countdownTime = 60; // Start from 60 seconds loading problems
-            lblFeedback.Text = countdownTime.ToString();
+            lblFeedback.Text = $"TIME: {countdownTime.ToString()} ";
             timer1.Interval = 1000; // 1 second
             timer1.Start();
         }
@@ -145,6 +146,9 @@ namespace SOFTDEV_FINAL_PROJECT
             return questions;
         }
 
+  
+
+
         private void NEXTbutton_Click(object sender, EventArgs e)
         {
             if (currentIndex < questions.Count)
@@ -186,6 +190,8 @@ namespace SOFTDEV_FINAL_PROJECT
             else
             {
                 MessageBox.Show($"🎉 Quiz completed!\nYour score: {score}/{questions.Count}", "Finished");
+
+                new Quizbot(studentName, studentID);
 
 
                 if (CURRENT_QUIZ == "Math1_Quiz.xlsx") quizColumn = "Math1";

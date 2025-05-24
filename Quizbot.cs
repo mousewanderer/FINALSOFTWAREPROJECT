@@ -93,7 +93,7 @@ namespace SOFTDEV_FINAL_PROJECT
         }
 
 
-        
+
 
 
 
@@ -112,7 +112,7 @@ namespace SOFTDEV_FINAL_PROJECT
 
         private void Math1button_Click(object sender, EventArgs e)
         {
-           
+
 
             if (!(started))
             {
@@ -134,9 +134,9 @@ namespace SOFTDEV_FINAL_PROJECT
             if (!(started))
             {
                 CURRENT_QUIZ = "InfoTech1_Quiz.xlsx";
-            questionnaire question = new questionnaire(CURRENT_QUIZ,studentName, studentID);
+                questionnaire question = new questionnaire(CURRENT_QUIZ, studentName, studentID);
 
-            question.Show();
+                question.Show();
             }
             else
             {
@@ -152,15 +152,15 @@ namespace SOFTDEV_FINAL_PROJECT
             if (!(started))
             {
                 CURRENT_QUIZ = "Math2_Quiz.xlsx";
-            questionnaire question = new questionnaire(CURRENT_QUIZ, studentName, studentID);
+                questionnaire question = new questionnaire(CURRENT_QUIZ, studentName, studentID);
 
-            question.Show();
-        }
+                question.Show();
+            }
             else
             {
                 MessageBox.Show("Sorry Please Complete the current quiz");
             }
-        
+
         }
 
         private void InfoTech2button_Click(object sender, EventArgs e)
@@ -169,9 +169,9 @@ namespace SOFTDEV_FINAL_PROJECT
             if (!(started))
             {
                 CURRENT_QUIZ = "InfoTech2_Quiz.xlsx";
-            questionnaire question = new questionnaire(CURRENT_QUIZ, studentName, studentID);
+                questionnaire question = new questionnaire(CURRENT_QUIZ, studentName, studentID);
 
-            question.Show();
+                question.Show();
 
             }
             else
@@ -189,18 +189,18 @@ namespace SOFTDEV_FINAL_PROJECT
             if (!(started))
             {
                 CURRENT_QUIZ = "Biology1_Quiz.xlsx";
-            questionnaire question = new questionnaire(CURRENT_QUIZ, studentName, studentID);
+                questionnaire question = new questionnaire(CURRENT_QUIZ, studentName, studentID);
 
-            question.Show();
+                question.Show();
 
-        }
+            }
             else
             {
                 MessageBox.Show("Sorry Please Complete the current quiz");
             }
 
 
-}
+        }
 
         private void Physics1button_Click(object sender, EventArgs e)
         {
@@ -209,9 +209,9 @@ namespace SOFTDEV_FINAL_PROJECT
             if (!(started))
             {
                 CURRENT_QUIZ = "Physics1_Quiz.xlsx";
-            questionnaire question = new questionnaire(CURRENT_QUIZ, studentName, studentID);
+                questionnaire question = new questionnaire(CURRENT_QUIZ, studentName, studentID);
 
-            question.Show();
+                question.Show();
 
             }
             else
@@ -222,6 +222,9 @@ namespace SOFTDEV_FINAL_PROJECT
 
         }
 
-       
+        private void INFO2SCORE_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

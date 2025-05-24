@@ -96,8 +96,13 @@ namespace SOFTDEV_FINAL_PROJECT
             // RANKING
 
             LoadForm(new RANKING());
-          
-            
+
+
+        }
+
+        private void UPDATEBUTTON_Click(object sender, EventArgs e)
+        {
+            LoadForm(new update(studentID));
         }
     }
 }

@@ -74,43 +74,41 @@
             // 
             MATH2SCORE.AutoSize = true;
             MATH2SCORE.BackColor = Color.FromArgb(193, 219, 217);
-            MATH2SCORE.BorderStyle = BorderStyle.FixedSingle;
-            MATH2SCORE.Font = new Font("Segoe UI", 12F);
+            MATH2SCORE.Font = new Font("Segoe UI", 10.2F);
             MATH2SCORE.ForeColor = Color.FromArgb(56, 91, 79);
-            MATH2SCORE.Location = new Point(363, 213);
+            MATH2SCORE.Location = new Point(363, 218);
             MATH2SCORE.Name = "MATH2SCORE";
-            MATH2SCORE.Size = new Size(55, 30);
+            MATH2SCORE.Size = new Size(85, 23);
             MATH2SCORE.TabIndex = 10;
-            MATH2SCORE.Text = "1/15";
+            MATH2SCORE.Text = "BEST:1/15";
             MATH2SCORE.TextAlign = ContentAlignment.TopCenter;
             // 
             // INFO1SCORE
             // 
             INFO1SCORE.AutoSize = true;
             INFO1SCORE.BackColor = Color.FromArgb(193, 219, 217);
-            INFO1SCORE.BorderStyle = BorderStyle.FixedSingle;
-            INFO1SCORE.Font = new Font("Segoe UI", 12F);
+            INFO1SCORE.Font = new Font("Segoe UI", 10.2F);
             INFO1SCORE.ForeColor = Color.FromArgb(56, 91, 79);
-            INFO1SCORE.Location = new Point(115, 433);
+            INFO1SCORE.Location = new Point(115, 438);
             INFO1SCORE.Name = "INFO1SCORE";
-            INFO1SCORE.Size = new Size(55, 30);
+            INFO1SCORE.Size = new Size(85, 23);
             INFO1SCORE.TabIndex = 11;
-            INFO1SCORE.Text = "1/15";
+            INFO1SCORE.Text = "BEST:1/15";
             INFO1SCORE.TextAlign = ContentAlignment.TopCenter;
             // 
             // INFO2SCORE
             // 
             INFO2SCORE.AutoSize = true;
             INFO2SCORE.BackColor = Color.FromArgb(193, 219, 217);
-            INFO2SCORE.BorderStyle = BorderStyle.FixedSingle;
-            INFO2SCORE.Font = new Font("Segoe UI", 12F);
+            INFO2SCORE.Font = new Font("Segoe UI", 10.2F);
             INFO2SCORE.ForeColor = Color.FromArgb(56, 91, 79);
-            INFO2SCORE.Location = new Point(363, 433);
+            INFO2SCORE.Location = new Point(363, 438);
             INFO2SCORE.Name = "INFO2SCORE";
-            INFO2SCORE.Size = new Size(55, 30);
+            INFO2SCORE.Size = new Size(85, 23);
             INFO2SCORE.TabIndex = 12;
-            INFO2SCORE.Text = "1/15";
+            INFO2SCORE.Text = "BEST:1/15";
             INFO2SCORE.TextAlign = ContentAlignment.TopCenter;
+            INFO2SCORE.Click += INFO2SCORE_Click;
             // 
             // InfoTech2button
             // 
@@ -129,14 +127,13 @@
             // 
             BIO1SCORE.AutoSize = true;
             BIO1SCORE.BackColor = Color.FromArgb(193, 219, 217);
-            BIO1SCORE.BorderStyle = BorderStyle.FixedSingle;
-            BIO1SCORE.Font = new Font("Segoe UI", 12F);
+            BIO1SCORE.Font = new Font("Segoe UI", 10.2F);
             BIO1SCORE.ForeColor = Color.FromArgb(56, 91, 79);
-            BIO1SCORE.Location = new Point(607, 213);
+            BIO1SCORE.Location = new Point(607, 218);
             BIO1SCORE.Name = "BIO1SCORE";
-            BIO1SCORE.Size = new Size(55, 30);
+            BIO1SCORE.Size = new Size(85, 23);
             BIO1SCORE.TabIndex = 13;
-            BIO1SCORE.Text = "1/15";
+            BIO1SCORE.Text = "BEST:1/15";
             BIO1SCORE.TextAlign = ContentAlignment.TopCenter;
             // 
             // Biology1button
@@ -156,14 +153,13 @@
             // 
             PHY1SCORE.AutoSize = true;
             PHY1SCORE.BackColor = Color.FromArgb(193, 219, 217);
-            PHY1SCORE.BorderStyle = BorderStyle.FixedSingle;
-            PHY1SCORE.Font = new Font("Segoe UI", 12F);
+            PHY1SCORE.Font = new Font("Segoe UI", 10.2F);
             PHY1SCORE.ForeColor = Color.FromArgb(56, 91, 79);
-            PHY1SCORE.Location = new Point(607, 433);
+            PHY1SCORE.Location = new Point(607, 438);
             PHY1SCORE.Name = "PHY1SCORE";
-            PHY1SCORE.Size = new Size(55, 30);
+            PHY1SCORE.Size = new Size(85, 23);
             PHY1SCORE.TabIndex = 14;
-            PHY1SCORE.Text = "1/15";
+            PHY1SCORE.Text = "BEST:1/15";
             PHY1SCORE.TextAlign = ContentAlignment.TopCenter;
             // 
             // Physics1button
@@ -196,14 +192,13 @@
             // 
             MATH1SCORE.AutoSize = true;
             MATH1SCORE.BackColor = Color.FromArgb(193, 219, 217);
-            MATH1SCORE.BorderStyle = BorderStyle.FixedSingle;
-            MATH1SCORE.Font = new Font("Segoe UI", 12F);
+            MATH1SCORE.Font = new Font("Segoe UI", 10.2F);
             MATH1SCORE.ForeColor = Color.FromArgb(56, 91, 79);
-            MATH1SCORE.Location = new Point(115, 213);
+            MATH1SCORE.Location = new Point(115, 218);
             MATH1SCORE.Name = "MATH1SCORE";
-            MATH1SCORE.Size = new Size(55, 30);
+            MATH1SCORE.Size = new Size(85, 23);
             MATH1SCORE.TabIndex = 9;
-            MATH1SCORE.Text = "1/15";
+            MATH1SCORE.Text = "BEST:1/15";
             MATH1SCORE.TextAlign = ContentAlignment.TopCenter;
             // 
             // Quizbot

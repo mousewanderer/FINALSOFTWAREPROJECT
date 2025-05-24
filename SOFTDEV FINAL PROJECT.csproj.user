@@ -22,6 +22,9 @@
     <Compile Update="RANKING.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="update.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="User_Profile.cs">
       <SubType>Form</SubType>
     </Compile>
