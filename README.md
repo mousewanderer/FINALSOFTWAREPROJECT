@@ -3,20 +3,10 @@
 
 A gamified Student Learning Management System (LMS) with quiz-based learning for IT subjects.
 Incorporates RPG elements like leveling up, badges, and achievements, making learning fun and engaging.
-
-(REMOVED KAY KAPOY NA HAHAHA)
-🎓 Student = Learner
-✅ Students can view completed tasks, quizzes, and progress.
-
 the ranking system will be implemented!
 
 # Objectives
-
-- Login user page (login and create account) ------------- (DONE) oh well
-- LMS dashboard (student) (LVL, subject taken, scores from the previous quizzes and achievements) ------------- (DONE)
-- TIME BOUND and RANKING SYSTEM (ONLY LAST NANI)
-
-
+// DONE BUT AT WHAT COST
 
 Advanced Features:
 UPDATE PROFILE
@@ -33,15 +23,10 @@ Nugets I add
 
 
 
-
-version 1.5
-
 VIDEO FOR DEMONSTRATION
 ![https://github.com/user-attachments/assets/b72d7633-d898-46bd-bf12-5347bca607c3]
 
-
-
-
+version 1.0.9
 
 
 // SQL commands
