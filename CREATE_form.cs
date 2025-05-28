@@ -31,8 +31,7 @@ namespace SOFTDEV_FINAL_PROJECT
             comboBoxProgram.Items.Add("Electrical Engineer");
             comboBoxProgram.Items.Add("Civil Engineer");
             comboBoxProgram.Items.Add("Combat Engineer");
-            comboBoxProgram.Items.Add("Information Technology (major in programming)");
-            comboBoxProgram.Items.Add("Information Technology (major in Networking)");
+            comboBoxProgram.Items.Add("Information Technology");
             comboBoxProgram.Items.Add("Food Technology");
             comboBoxProgram.Items.Add("Education");
             comboBoxProgram.Items.Add("Tourism Management");
@@ -126,7 +125,7 @@ namespace SOFTDEV_FINAL_PROJECT
                         allowed = false;
                         return;
                     }
-                    
+
                 }
 
                 // 2. Check if full name (first + last) already exists
@@ -143,7 +142,7 @@ namespace SOFTDEV_FINAL_PROJECT
                         allowed = false;
                         return;
                     }
-                    
+
                 }
 
                 // Continue with insert if no duplicate
@@ -218,7 +217,7 @@ namespace SOFTDEV_FINAL_PROJECT
                 {
                     allowed = true; // No confirmation needed for older users
                 }
-                
+
             }
 
 
@@ -272,7 +271,7 @@ namespace SOFTDEV_FINAL_PROJECT
 
                             // Now insert into Quizzes table with default values
                             string insertScoreQuery = @"INSERT INTO Quizzes (StudentID, numquiz, Leveling, Math1, Math2, InfoTech1, InfoTech2, Biology1, Physics1)
-                                                VALUES (@StudentID, -1, 1, -1, -1, -1, -1, -1, -1)";
+                                                VALUES (@StudentID, 1, 1, -1, -1, -1, -1, -1, -1)";
 
                             using (SqlCommand quizCmd = new SqlCommand(insertScoreQuery, conn))
                             {
@@ -286,12 +285,12 @@ namespace SOFTDEV_FINAL_PROJECT
 
                             // RETURN TO BLANK
 
-                             textBoxFirstName.Text = "";
+                            textBoxFirstName.Text = "";
                             textBoxLastname.Text = "";
                             textBoxAge.Text = "";
-                             comboBoxGender.Text = "";
+                            comboBoxGender.Text = "";
                             comboBoxProgram.Text = "";
-                             textbox_username.Text  = "";
+                            textbox_username.Text = "";
                             TextboxPassword.Text = "";
                         }
                     }
@@ -490,6 +489,11 @@ namespace SOFTDEV_FINAL_PROJECT
             {
                 comboBoxGender.Text = "";
             }
+
+        }
+
+        private void textBoxFirstName_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

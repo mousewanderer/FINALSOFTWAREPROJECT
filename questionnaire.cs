@@ -1,43 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClosedXML.Excel;
-using DocumentFormat.OpenXml.Drawing;
+using Timer = System.Windows.Forms.Timer; // Add this with other using directives
 
 namespace SOFTDEV_FINAL_PROJECT
 {
     public partial class questionnaire : Form
     {
-
         private string CURRENT_QUIZ;
-
         private string studentName;
         private string studentID;
         private string quizColumn = "";
-
-        bool bypassAnswerCheck = false;
+        private bool isTimeUp = false;
 
         public questionnaire(string locate, string name, string id)
         {
-
             studentName = name;
             studentID = id;
             InitializeComponent();
             CURRENT_QUIZ = locate;
         }
 
+    
+                    
+        int countdownTime = 60; // 60 seconds per question
+        int questionTimeLimit = 60; // Can be adjusted per question if needed
 
-        int countdownTime = 60; // 60 second
-
-      
 
 
         private void questionnaire_Load(object sender, EventArgs e)
@@ -46,15 +37,9 @@ namespace SOFTDEV_FINAL_PROJECT
             questions = LoadQuestions(CURRENT_QUIZ);
             Shuffle(questions);
             DisplayQuestion();
-            countdownTime = 60; // Start from 60 seconds loading problems
-            lblFeedback.Text = $"TIME: {countdownTime.ToString()} ";
-            timer1.Interval = 1000; // 1 second
+            ResetTimer();
             timer1.Start();
         }
-
-
-
-
 
 
         class Question
@@ -64,32 +49,24 @@ namespace SOFTDEV_FINAL_PROJECT
             public string CorrectAnswer;
         }
 
-
         List<Question> questions;
         int currentQuestionIndex = 0;
         int score = 0;
-        int currentIndex = 0;
-
-
-
-
-
 
         void DisplayQuestion()
         {
-            if (currentIndex >= questions.Count)
+            if (currentQuestionIndex >= questions.Count)
             {
-                MessageBox.Show($"🎉 Quiz completed!\nYour score: {score}/{questions.Count}");
+                CompleteQuiz();
                 return;
             }
 
-            var q = questions[currentIndex];
-            QUESTION_Label.Text = $"{currentIndex + 1}: {q.Text}";
+            var q = questions[currentQuestionIndex];
+            QUESTION_Label.Text = $"{currentQuestionIndex + 1}: {q.Text}";
 
             var randomized = new List<(string Label, string Choice)>(q.Choices);
             Shuffle(randomized);
 
-            // Set text and tags
             rbA.Text = randomized[0].Choice;
             rbA.Tag = randomized[0].Label;
 
@@ -103,10 +80,22 @@ namespace SOFTDEV_FINAL_PROJECT
             rbD.Tag = randomized[3].Label;
 
             rbA.Checked = rbB.Checked = rbC.Checked = rbD.Checked = false;
-            lblFeedback.Text = "";
+
+            lblFeedback.Text = $"Time: {countdownTime}s";
+       
+
+            // Reset timer for new question
+            ResetTimer();
         }
 
-
+        void ResetTimer()
+        {
+            countdownTime = questionTimeLimit;
+            timer1.Stop();
+            timer1.Start();
+            isTimeUp = false;
+          
+        }
 
         void Shuffle<T>(List<T> list)
         {
@@ -133,12 +122,12 @@ namespace SOFTDEV_FINAL_PROJECT
                     {
                         Text = row.Cell(1).GetString(),
                         Choices = new List<(string, string)>
-                {
-                    ("A", row.Cell(2).GetString()),
-                    ("B", row.Cell(3).GetString()),
-                    ("C", row.Cell(4).GetString()),
-                    ("D", row.Cell(5).GetString())
-                },
+                        {
+                            ("A", row.Cell(2).GetString()),
+                            ("B", row.Cell(3).GetString()),
+                            ("C", row.Cell(4).GetString()),
+                            ("D", row.Cell(5).GetString())
+                        },
                         CorrectAnswer = row.Cell(6).GetString().ToUpper()
                     });
                 }
@@ -146,80 +135,69 @@ namespace SOFTDEV_FINAL_PROJECT
             return questions;
         }
 
-  
-
-
         private void NEXTbutton_Click(object sender, EventArgs e)
         {
-            if (currentIndex < questions.Count)
+            ProcessQuestion();
+        }
+
+        private void ProcessQuestion()
+        {
+            if (currentQuestionIndex >= questions.Count) return;
+
+            var selected = new[] { rbA, rbB, rbC, rbD }.FirstOrDefault(rb => rb.Checked);
+
+            // Only check answer if time hasn't run out and an answer was selected
+            if (!isTimeUp && selected != null)
             {
-                var selected = new[] { rbA, rbB, rbC, rbD }.FirstOrDefault(rb => rb.Checked);
-
-                if (selected == null && !bypassAnswerCheck)
-                {
-                    MessageBox.Show("Select an answer.");
-                    return;
-                }
-                countdownTime = 61; //seconds loading problems
-
-                var q = questions[currentIndex];
+                var q = questions[currentQuestionIndex];
                 var correctChoice = q.Choices.Find(c => c.Label == q.CorrectAnswer).Choice;
 
                 if (selected.Text == correctChoice)
                 {
-
                     score++;
                 }
-                else
-                {
+            }
 
-                }
+            SCORELABEL.Text = $"{score}/{questions.Count}";
+            currentQuestionIndex++;
 
-                SCORELABEL.Text = $"{score}/{questions.Count}";
-                currentIndex++;
+            if (currentQuestionIndex == questions.Count)
+            {
+                NEXTbutton.Text = "Complete";
+            }
 
-                if (currentIndex == questions.Count)
-                {
-                    NEXTbutton.Text = "Complete";
-                }
-                else
-                {
-                    DisplayQuestion(); // Only load next question if not last
-                }
+            DisplayQuestion();
+        }
+
+        private void CompleteQuiz()
+        {
+            timer1.Stop();
+            MessageBox.Show($"🎉 Quiz completed!\nYour score: {score}/{questions.Count}", "Finished");
+
+            // Determine quiz column for database
+            quizColumn = CURRENT_QUIZ switch
+            {
+                "Math1_Quiz.xlsx" => "Math1",
+                "Math2_Quiz.xlsx" => "Math2",
+                "InfoTech1_Quiz.xlsx" => "InfoTech1",
+                "InfoTech2_Quiz.xlsx" => "InfoTech2",
+                "Biology1_Quiz.xlsx" => "Biology1",
+                "Physics1_Quiz.xlsx" => "Physics1",
+                _ => null
+            };
+
+            if (quizColumn != null)
+            {
+                SaveQuizScoreToDatabase(quizColumn, score);
             }
             else
             {
-                MessageBox.Show($"🎉 Quiz completed!\nYour score: {score}/{questions.Count}", "Finished");
-
-                new Quizbot(studentName, studentID);
-
-
-                if (CURRENT_QUIZ == "Math1_Quiz.xlsx") quizColumn = "Math1";
-                else if (CURRENT_QUIZ == "Math2_Quiz.xlsx") quizColumn = "Math2";
-                else if (CURRENT_QUIZ == "InfoTech1_Quiz.xlsx") quizColumn = "InfoTech1";
-                else if (CURRENT_QUIZ == "InfoTech2_Quiz.xlsx") quizColumn = "InfoTech2";
-                else if (CURRENT_QUIZ == "Biology1_Quiz.xlsx") quizColumn = "Biology1";
-                else if (CURRENT_QUIZ == "Physics1_Quiz.xlsx") quizColumn = "Physics1";
-
-                else
-                {
-                    MessageBox.Show("Unknown quiz type. Cannot save.");
-                    return;
-                }
-
-                SaveQuizScoreToDatabase(quizColumn, score);
-
-
-
-                Quizbot quiz = new Quizbot(studentName, studentID);
-
-
-
-                this.Hide();
-
+                MessageBox.Show("Unknown quiz type. Cannot save.");
             }
-        }
 
+            Quizbot quiz = new Quizbot(studentName, studentID);
+            this.Hide();
+        }
 
         private void SaveQuizScoreToDatabase(string quizColumn, int score)
         {
@@ -252,19 +230,19 @@ namespace SOFTDEV_FINAL_PROJECT
                         if (score >= 8)
                         {
                             updateQuery = $@"
-                        UPDATE Quizzes 
-                        SET {quizColumn} = @Score, 
-                            numquiz = numquiz + 1,
-                            Leveling = Leveling + 1
-                        WHERE StudentID = @StudentID";
+                  UPDATE Quizzes 
+                  SET {quizColumn} = @Score, 
+                      numquiz = numquiz + 1,
+                      Leveling = Leveling + 1
+                  WHERE StudentID = @StudentID";
                         }
                         else
                         {
                             updateQuery = $@"
-                        UPDATE Quizzes 
-                        SET {quizColumn} = @Score, 
-                            numquiz = numquiz + 1
-                        WHERE StudentID = @StudentID";
+                  UPDATE Quizzes 
+                  SET {quizColumn} = @Score, 
+                      numquiz = numquiz + 1
+                  WHERE StudentID = @StudentID";
                         }
 
                         using (SqlCommand updateCmd = new SqlCommand(updateQuery, conn))
@@ -289,39 +267,48 @@ namespace SOFTDEV_FINAL_PROJECT
                 MessageBox.Show("Error saving score: " + ex.Message);
             }
         }
-
-        private void lblFeedback_Click(object sender, EventArgs e)
-        {
-
-        }
+        static DateTime lastTick = DateTime.MinValue;
 
 
-
-        // TIME FOR THE LABEL MODIFY
         private void timer1_Tick(object sender, EventArgs e)
         {
-            countdownTime--;
-            lblFeedback.Text = countdownTime.ToString() + "s";
+            // Use high precision timing
+            var now = DateTime.Now;
 
-            if (countdownTime <= 0)
+            lblFeedback.ForeColor = Color.FromArgb(40, 122, 116);
+
+
+            // Ensure at least 1 second has passed
+            if ((now - lastTick).TotalSeconds >= 1)
             {
-                timer1.Stop();
-                bypassAnswerCheck = true; // tell the button to skip validation
-                lblFeedback.Text = "Time's up!";
-                // NEXT QUESTION
+                countdownTime--;
+                lastTick = now;
 
-                NEXTbutton.PerformClick();
+                lblFeedback.Text = $"Time: {countdownTime}s";
 
-                bypassAnswerCheck = false;
+                if (countdownTime <= 0)
+                {
+                    timer1.Stop();
+                    isTimeUp = true;
+                    lblFeedback.Text = "Time's up!";
 
+                    // Use async delay instead of nested timer
+                    Task.Delay(1500).ContinueWith(t =>
+                    {
+                        this.Invoke((MethodInvoker)delegate {
+                            ProcessQuestion();
+                        });
+                    });
+                }
+                else if (countdownTime <= 10)
+                {
+                    lblFeedback.ForeColor = Color.Red;
+                }
+                else
+                {
+                    lblFeedback.ForeColor = SystemColors.ControlText;
+                }
             }
-
-
-        }
-
-        private void SCORELABEL_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -67,11 +67,11 @@
             // 
             Firstname.AutoSize = true;
             Firstname.BackColor = Color.FromArgb(40, 122, 116);
-            Firstname.Font = new Font("Segoe UI", 12F);
+            Firstname.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             Firstname.ForeColor = SystemColors.ButtonFace;
             Firstname.Location = new Point(338, 144);
             Firstname.Name = "Firstname";
-            Firstname.Size = new Size(101, 28);
+            Firstname.Size = new Size(106, 28);
             Firstname.TabIndex = 7;
             Firstname.Text = "Firstname:";
             Firstname.Click += Firstname_Click;
@@ -80,11 +80,11 @@
             // 
             lastname.AutoSize = true;
             lastname.BackColor = Color.FromArgb(40, 122, 116);
-            lastname.Font = new Font("Segoe UI", 12F);
+            lastname.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             lastname.ForeColor = SystemColors.ButtonFace;
             lastname.Location = new Point(338, 205);
             lastname.Name = "lastname";
-            lastname.Size = new Size(98, 28);
+            lastname.Size = new Size(104, 28);
             lastname.TabIndex = 8;
             lastname.Text = "Lastname:";
             // 
@@ -92,11 +92,11 @@
             // 
             CourseLabel.AutoSize = true;
             CourseLabel.BackColor = Color.FromArgb(40, 122, 116);
-            CourseLabel.Font = new Font("Segoe UI", 12F);
+            CourseLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             CourseLabel.ForeColor = SystemColors.ButtonFace;
             CourseLabel.Location = new Point(194, 432);
             CourseLabel.Name = "CourseLabel";
-            CourseLabel.Size = new Size(76, 28);
+            CourseLabel.Size = new Size(80, 28);
             CourseLabel.TabIndex = 9;
             CourseLabel.Text = "Course:";
             // 
@@ -104,11 +104,11 @@
             // 
             LEVEL_label.AutoSize = true;
             LEVEL_label.BackColor = Color.FromArgb(40, 122, 116);
-            LEVEL_label.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LEVEL_label.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             LEVEL_label.ForeColor = SystemColors.ButtonFace;
             LEVEL_label.Location = new Point(594, 239);
             LEVEL_label.Name = "LEVEL_label";
-            LEVEL_label.Size = new Size(94, 28);
+            LEVEL_label.Size = new Size(100, 28);
             LEVEL_label.TabIndex = 10;
             LEVEL_label.Text = "Level:  ___";
             // 
@@ -116,23 +116,24 @@
             // 
             num_quizzes.AutoSize = true;
             num_quizzes.BackColor = Color.FromArgb(40, 122, 116);
-            num_quizzes.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            num_quizzes.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             num_quizzes.ForeColor = SystemColors.ButtonFace;
             num_quizzes.Location = new Point(576, 310);
             num_quizzes.Name = "num_quizzes";
-            num_quizzes.Size = new Size(112, 28);
+            num_quizzes.Size = new Size(117, 28);
             num_quizzes.TabIndex = 11;
             num_quizzes.Text = "Quizzes: ___";
+            num_quizzes.Click += num_quizzes_Click;
             // 
             // Agelabel
             // 
             Agelabel.AutoSize = true;
             Agelabel.BackColor = Color.FromArgb(40, 122, 116);
-            Agelabel.Font = new Font("Segoe UI", 12F);
+            Agelabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             Agelabel.ForeColor = SystemColors.ButtonFace;
             Agelabel.Location = new Point(194, 389);
             Agelabel.Name = "Agelabel";
-            Agelabel.Size = new Size(51, 28);
+            Agelabel.Size = new Size(53, 28);
             Agelabel.TabIndex = 12;
             Agelabel.Text = "Age:";
             // 
@@ -140,11 +141,11 @@
             // 
             Gender.AutoSize = true;
             Gender.BackColor = Color.FromArgb(40, 122, 116);
-            Gender.Font = new Font("Segoe UI", 12F);
+            Gender.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             Gender.ForeColor = SystemColors.ButtonFace;
             Gender.Location = new Point(190, 476);
             Gender.Name = "Gender";
-            Gender.Size = new Size(80, 28);
+            Gender.Size = new Size(85, 28);
             Gender.TabIndex = 13;
             Gender.Text = "Gender:";
             // 
@@ -152,11 +153,11 @@
             // 
             Usernamelabel.AutoSize = true;
             Usernamelabel.BackColor = Color.FromArgb(40, 122, 116);
-            Usernamelabel.Font = new Font("Segoe UI", 12F);
+            Usernamelabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             Usernamelabel.ForeColor = SystemColors.ButtonFace;
             Usernamelabel.Location = new Point(194, 343);
             Usernamelabel.Name = "Usernamelabel";
-            Usernamelabel.Size = new Size(103, 28);
+            Usernamelabel.Size = new Size(109, 28);
             Usernamelabel.TabIndex = 14;
             Usernamelabel.Text = "Username:";
             Usernamelabel.TextAlign = ContentAlignment.BottomCenter;

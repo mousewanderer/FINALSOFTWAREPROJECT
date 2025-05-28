@@ -28,7 +28,7 @@ namespace SOFTDEV_FINAL_PROJECT
         public User_Profile(string name, string id)
         {
             InitializeComponent();
-        
+
             studentFirstName = name;
             studentID = id;
         }
@@ -36,7 +36,7 @@ namespace SOFTDEV_FINAL_PROJECT
 
         private void User_Profile_Load(object sender, EventArgs e)
         {
-            NAME_LABEL.Text = $"Welcome, {studentFirstName} (ID: {studentID})";
+
 
             using (SqlConnection conn = new SqlConnection("Server=ASUS_2023;Database=Final_ProjectDB;Trusted_Connection=True;"))
             {
@@ -53,15 +53,15 @@ namespace SOFTDEV_FINAL_PROJECT
                     {
                         if (reader1.Read())
                         {
-                            num_quizzes.Text = $"You take :{reader1["numquiz"].ToString()} quizzes";
+                            num_quizzes.Text = $"You take: {reader1["numquiz"].ToString()} quizzes";
                             LEVEL_label.Text = $"Level: {reader1["Leveling"].ToString()}";
-                            Firstname.Text = $"{studentFirstName}";
+
                         }
                     }
                 }
 
                 // SECOND QUERY: Get personal info
-                string query2 = "SELECT LastName, Age, Gender, Program, Username FROM Students WHERE StudentID = @ID";
+                string query2 = "SELECT FirstName, LastName, Age, Gender, Program, Username FROM Students WHERE StudentID = @ID";
 
                 using (SqlCommand cmd2 = new SqlCommand(query2, conn))
                 {
@@ -71,11 +71,15 @@ namespace SOFTDEV_FINAL_PROJECT
                     {
                         if (reader2.Read())
                         {
+                            Firstname.Text = $"{reader2["FirstName"].ToString()}";
                             lastname.Text = $"{reader2["LastName"].ToString()}";
                             Agelabel.Text = $"{reader2["Age"].ToString()}";
                             Gender.Text = $"{reader2["Gender"].ToString()}";
                             CourseLabel.Text = $"{reader2["Program"].ToString()}";
                             Usernamelabel.Text = $"{reader2["Username"].ToString()}"; // corrected to Username
+
+
+                            NAME_LABEL.Text = $"Welcome, {reader2["FirstName"].ToString()} (ID: {studentID})";
                         }
                     }
                 }
@@ -83,6 +87,10 @@ namespace SOFTDEV_FINAL_PROJECT
 
 
             //---------------------------------------------------------------
+
+
+
+
 
 
 
@@ -105,6 +113,9 @@ namespace SOFTDEV_FINAL_PROJECT
 
         }
 
+        private void num_quizzes_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

@@ -52,6 +52,7 @@
             textBoxFirstName.Name = "textBoxFirstName";
             textBoxFirstName.Size = new Size(183, 30);
             textBoxFirstName.TabIndex = 1;
+            textBoxFirstName.TextChanged += textBoxFirstName_TextChanged;
             // 
             // textBoxAge
             // 

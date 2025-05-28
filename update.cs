@@ -16,10 +16,10 @@ namespace SOFTDEV_FINAL_PROJECT
     {
 
 
-    
+
         private string studentID;
 
-        public update( string id)
+        public update(string id)
         {
             InitializeComponent();
             studentID = id;
@@ -78,19 +78,19 @@ namespace SOFTDEV_FINAL_PROJECT
                             comboBoxProgram.Text = $"{reader2["Program"].ToString()}";
                             textbox_username.Text = $"{reader2["Username"].ToString()}";
 
-                            
+
 
                             TextboxPassword.Text = $"{reader2["KeyPassword"].ToString()}";
 
 
-                           
+
                             // I AM DUMB useless store
 
                             string previous_age = $"{reader2["Age"].ToString()}";
                             string previous_gender = $"{reader2["Gender"].ToString()}";
                             string previous_Program = $"{reader2["Program"].ToString()}";
 
-                           
+
                             string previous_password = $"{reader2["KeyPassword"].ToString()}";
 
 
@@ -621,6 +621,102 @@ namespace SOFTDEV_FINAL_PROJECT
                               MessageBoxButtons.OK,
                               MessageBoxIcon.Error);
             }
+        }
+
+        private void TextboxPassword_TextChanged_1(object sender, EventArgs e)
+        {
+            string password = TextboxPassword.Text;
+            List<string> errors = new List<string>();
+
+            if (password.Length < 8 || password.Length > 20)
+            {
+                errors.Add("• Password must be between 8 and 20 characters long.");
+            }
+
+            if (!password.Any(char.IsDigit))
+            {
+                errors.Add("• Password must contain at least one number.");
+            }
+
+            if (!password.Any(char.IsUpper))
+            {
+                errors.Add("• Password should include at least one uppercase letter.");
+            }
+
+            if (!password.Any(char.IsLower))
+            {
+                errors.Add("• Password should include at least one lowercase letter.");
+            }
+
+
+
+            if (errors.Count > 0)
+            {
+                labelPasswordError.Visible = true;
+                labelPasswordError.Text = string.Join("\n", errors);
+            }
+            else
+            {
+                labelPasswordError.Visible = false;
+            }
+
+        }
+
+        private void textbox_username_TextChanged_1(object sender, EventArgs e)
+        {
+            string username = textbox_username.Text;
+            List<string> messages = new List<string>();
+
+            if (username.Length < 5 || username.Length > 15)
+            {
+                messages.Add("• Username must be 5 to 15 characters long.");
+            }
+
+            if (!string.IsNullOrEmpty(username) && !char.IsLetter(username[0]))
+            {
+                messages.Add("• Username must start with a letter.");
+            }
+
+            if (!username.All(ch => char.IsLetterOrDigit(ch) || ch == '_'))
+            {
+                messages.Add("• Username can only contain letters, digits, and underscores.");
+            }
+
+            if (username.Contains(" "))
+            {
+                messages.Add("• Username should not contain spaces.");
+            }
+
+            if (messages.Count > 0)
+            {
+                usernamevalid.Visible = true;
+                usernamevalid.Text = string.Join("\n", messages);
+
+            }
+            else
+            {
+                usernamevalid.Visible = true;
+                usernamevalid.Text = "✓ Username is valid";
+
+            }
+        }
+
+        private void comboBoxGender_TextChanged_1(object sender, EventArgs e)
+        {
+            string[] allowedGenders = new string[]
+   {
+        "Male", "Female", "LGBTQIA", "Rather not say"
+   };
+
+            if (!allowedGenders.Contains(comboBoxGender.Text))
+            {
+                comboBoxGender.Text = "";
+            }
+        }
+
+        private void usernamevalid_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

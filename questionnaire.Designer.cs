@@ -126,24 +126,25 @@
             // 
             SCORELABEL.AutoSize = true;
             SCORELABEL.BackColor = Color.Transparent;
+            SCORELABEL.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             SCORELABEL.ForeColor = Color.FromArgb(40, 122, 116);
-            SCORELABEL.Location = new Point(775, 44);
+            SCORELABEL.Location = new Point(770, 41);
             SCORELABEL.Name = "SCORELABEL";
-            SCORELABEL.Size = new Size(0, 28);
+            SCORELABEL.Size = new Size(0, 32);
             SCORELABEL.TabIndex = 6;
-            SCORELABEL.Click += SCORELABEL_Click;
+            SCORELABEL.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblFeedback
             // 
             lblFeedback.AutoSize = true;
-            lblFeedback.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblFeedback.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblFeedback.ForeColor = Color.FromArgb(40, 122, 116);
-            lblFeedback.Location = new Point(731, 376);
+            lblFeedback.Location = new Point(695, 379);
             lblFeedback.Name = "lblFeedback";
-            lblFeedback.Size = new Size(104, 28);
+            lblFeedback.Size = new Size(125, 32);
             lblFeedback.TabIndex = 7;
             lblFeedback.Text = "TIME: 60s";
-            lblFeedback.Click += lblFeedback_Click;
+            lblFeedback.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // timer1
             // 

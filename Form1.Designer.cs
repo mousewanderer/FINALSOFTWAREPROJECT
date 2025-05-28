@@ -36,7 +36,6 @@
             buttonCREATE = new Button();
             buttonLogin = new Button();
             buttonexit = new Button();
-            forgotpassword = new LinkLabel();
             SuspendLayout();
             // 
             // textBoxUsername
@@ -81,7 +80,7 @@
             // buttonCREATE
             // 
             buttonCREATE.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
-            buttonCREATE.Location = new Point(639, 381);
+            buttonCREATE.Location = new Point(642, 395);
             buttonCREATE.Name = "buttonCREATE";
             buttonCREATE.Size = new Size(94, 29);
             buttonCREATE.TabIndex = 7;
@@ -92,7 +91,7 @@
             // buttonLogin
             // 
             buttonLogin.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
-            buttonLogin.Location = new Point(459, 381);
+            buttonLogin.Location = new Point(466, 395);
             buttonLogin.Name = "buttonLogin";
             buttonLogin.Size = new Size(94, 29);
             buttonLogin.TabIndex = 8;
@@ -113,18 +112,6 @@
             buttonexit.UseVisualStyleBackColor = false;
             buttonexit.Click += buttonexit_Click;
             // 
-            // forgotpassword
-            // 
-            forgotpassword.AutoSize = true;
-            forgotpassword.BackColor = Color.Transparent;
-            forgotpassword.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
-            forgotpassword.Location = new Point(534, 447);
-            forgotpassword.Name = "forgotpassword";
-            forgotpassword.Size = new Size(138, 23);
-            forgotpassword.TabIndex = 9;
-            forgotpassword.TabStop = true;
-            forgotpassword.Text = "Forgot password";
-            // 
             // LOGINFORM
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -133,7 +120,6 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1202, 576);
             Controls.Add(buttonexit);
-            Controls.Add(forgotpassword);
             Controls.Add(buttonLogin);
             Controls.Add(buttonCREATE);
             Controls.Add(textBoxPassword);
@@ -156,6 +142,5 @@
         private Button buttonCREATE;
         private Button buttonLogin;
         private Button buttonexit;
-        private LinkLabel forgotpassword;
     }
 }

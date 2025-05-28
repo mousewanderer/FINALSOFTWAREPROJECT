@@ -35,8 +35,6 @@
             quizbotbutton = new Button();
             AchievementsButton = new Button();
             Rankingbutton = new Button();
-            SearchTextbox = new TextBox();
-            Search_button = new Button();
             MAINPanel = new Panel();
             UPDATEBUTTON = new Button();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
@@ -52,9 +50,9 @@
             Backbutto.BackColor = Color.Teal;
             Backbutto.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             Backbutto.ForeColor = Color.White;
-            Backbutto.Location = new Point(140, 437);
+            Backbutto.Location = new Point(23, 550);
             Backbutto.Name = "Backbutto";
-            Backbutto.Size = new Size(94, 29);
+            Backbutto.Size = new Size(200, 58);
             Backbutto.TabIndex = 0;
             Backbutto.Text = "Back";
             Backbutto.UseVisualStyleBackColor = false;
@@ -67,9 +65,9 @@
             Profile_button.ForeColor = Color.Transparent;
             Profile_button.Image = (Image)resources.GetObject("Profile_button.Image");
             Profile_button.ImageAlign = ContentAlignment.MiddleLeft;
-            Profile_button.Location = new Point(12, 148);
+            Profile_button.Location = new Point(36, 165);
             Profile_button.Name = "Profile_button";
-            Profile_button.Size = new Size(240, 64);
+            Profile_button.Size = new Size(172, 64);
             Profile_button.TabIndex = 7;
             Profile_button.Text = "Profile";
             Profile_button.UseVisualStyleBackColor = false;
@@ -82,9 +80,9 @@
             quizbotbutton.ForeColor = Color.Transparent;
             quizbotbutton.Image = (Image)resources.GetObject("quizbotbutton.Image");
             quizbotbutton.ImageAlign = ContentAlignment.MiddleLeft;
-            quizbotbutton.Location = new Point(12, 288);
+            quizbotbutton.Location = new Point(36, 305);
             quizbotbutton.Name = "quizbotbutton";
-            quizbotbutton.Size = new Size(240, 73);
+            quizbotbutton.Size = new Size(172, 73);
             quizbotbutton.TabIndex = 5;
             quizbotbutton.Text = "Quizbot";
             quizbotbutton.UseVisualStyleBackColor = false;
@@ -97,11 +95,11 @@
             AchievementsButton.ForeColor = Color.Transparent;
             AchievementsButton.Image = (Image)resources.GetObject("AchievementsButton.Image");
             AchievementsButton.ImageAlign = ContentAlignment.MiddleLeft;
-            AchievementsButton.Location = new Point(12, 218);
+            AchievementsButton.Location = new Point(36, 235);
             AchievementsButton.Name = "AchievementsButton";
-            AchievementsButton.Size = new Size(240, 64);
+            AchievementsButton.Size = new Size(172, 64);
             AchievementsButton.TabIndex = 5;
-            AchievementsButton.Text = "Achievements";
+            AchievementsButton.Text = "        Achievements";
             AchievementsButton.UseVisualStyleBackColor = false;
             AchievementsButton.Click += AchievementsButton_Click;
             // 
@@ -112,33 +110,13 @@
             Rankingbutton.ForeColor = Color.Transparent;
             Rankingbutton.Image = (Image)resources.GetObject("Rankingbutton.Image");
             Rankingbutton.ImageAlign = ContentAlignment.MiddleLeft;
-            Rankingbutton.Location = new Point(12, 367);
+            Rankingbutton.Location = new Point(36, 384);
             Rankingbutton.Name = "Rankingbutton";
-            Rankingbutton.Size = new Size(240, 64);
+            Rankingbutton.Size = new Size(172, 64);
             Rankingbutton.TabIndex = 6;
             Rankingbutton.Text = "Ranking";
             Rankingbutton.UseVisualStyleBackColor = false;
             Rankingbutton.Click += Rankingbutton_Click;
-            // 
-            // SearchTextbox
-            // 
-            SearchTextbox.BackColor = Color.Teal;
-            SearchTextbox.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            SearchTextbox.ForeColor = Color.White;
-            SearchTextbox.Location = new Point(81, 550);
-            SearchTextbox.Name = "SearchTextbox";
-            SearchTextbox.Size = new Size(164, 51);
-            SearchTextbox.TabIndex = 5;
-            // 
-            // Search_button
-            // 
-            Search_button.BackColor = Color.Teal;
-            Search_button.Image = (Image)resources.GetObject("Search_button.Image");
-            Search_button.Location = new Point(12, 544);
-            Search_button.Name = "Search_button";
-            Search_button.Size = new Size(63, 57);
-            Search_button.TabIndex = 5;
-            Search_button.UseVisualStyleBackColor = false;
             // 
             // MAINPanel
             // 
@@ -153,11 +131,11 @@
             UPDATEBUTTON.BackColor = Color.Teal;
             UPDATEBUTTON.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             UPDATEBUTTON.ForeColor = Color.White;
-            UPDATEBUTTON.Location = new Point(27, 437);
+            UPDATEBUTTON.Location = new Point(36, 465);
             UPDATEBUTTON.Name = "UPDATEBUTTON";
-            UPDATEBUTTON.Size = new Size(94, 29);
+            UPDATEBUTTON.Size = new Size(172, 64);
             UPDATEBUTTON.TabIndex = 8;
-            UPDATEBUTTON.Text = "Update";
+            UPDATEBUTTON.Text = "Update Profile";
             UPDATEBUTTON.UseVisualStyleBackColor = false;
             UPDATEBUTTON.Click += UPDATEBUTTON_Click;
             // 
@@ -172,8 +150,6 @@
             Controls.Add(UPDATEBUTTON);
             Controls.Add(Backbutto);
             Controls.Add(Rankingbutton);
-            Controls.Add(Search_button);
-            Controls.Add(SearchTextbox);
             Controls.Add(Profile_button);
             Controls.Add(AchievementsButton);
             Controls.Add(quizbotbutton);
@@ -185,15 +161,12 @@
             Load += DASHBOARD_form_Load_1;
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
         private FileSystemWatcher fileSystemWatcher1;
         private Panel MAINPanel;
         private Button Profile_button;
-        private TextBox SearchTextbox;
-        private Button Search_button;
         private Button quizbotbutton;
         private Button Rankingbutton;
         private Button AchievementsButton;
