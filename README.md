@@ -1,25 +1,40 @@
 # FINAL SOFTWARE PROJECT
 
+A gamified Student Learning Management System (LMS) for IT subjects.  
+Includes quiz-based learning with RPG elements such as leveling, badges, achievements, and a ranking system.
 
-A gamified Student Learning Management System (LMS) with quiz-based learning for IT subjects.
-Incorporates RPG elements like leveling up, badges, and achievements, making learning fun and engaging.
-the ranking system will be implemented!
+## Objectives
+- Build core LMS with quizzes and tracking
+- Add gamification, leaderboards, and progression
+- Enable profile updates and user search
+- Complete documentation
 
-# Objectives
-// DONE BUT AT WHAT COST
+## Status
+- Version 1.0.9
+- Demo video available in repo assets
 
-Advanced Features:
-UPDATE PROFILE
-SESRCH OTHER USERS
+## Core Features
+- Quiz engine with subject breakdown
+- Score tracking per student
+- Player leveling based on quiz count
+- Badge and achievement system
+- Leaderboard for rankings
 
-AND DOING THE DOCUMENTATION
+## Planned Features
+- [ ] Profile update flow
+- [ ] Search other users
+- [ ] Progress reports and analytics
+- [ ] Spaced repetition for quizzes
+- [ ] Import and export of question decks
+- [ ] Offline support and mobile-friendly layout
+- [ ] Dark and light theme options
+- [ ] Keyboard shortcuts for rapid use
+- [ ] Shareable decks between users
 
+## Dependencies
+- ClosedXML for Excel export
+- System.Data.SqlClient for SQL access
 
-
-Nugets I add
-- CLOSEDXML for excel 
-- SQLDATACLIENT for sql
- 
 
 
 
@@ -28,10 +43,8 @@ VIDEO FOR DEMONSTRATION
 
 version 1.0.9
 
-
-// SQL commands
-
-
+## Database Schema
+**Students Table**
 ```
 USE Final_projectDB; 
  GO
@@ -122,6 +135,11 @@ select * from Students
 
 
 ```
+
+## Security Notes
+- Remove sample accounts before deployment
+- Hash passwords with a modern algorithm
+- Enforce least privilege on database access
 
 
 
