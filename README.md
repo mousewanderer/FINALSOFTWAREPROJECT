@@ -2,7 +2,6 @@
 
 A gamified Student Learning Management System (LMS) for IT subjects.  
 Includes quiz-based learning with RPG elements such as leveling, badges, achievements, and a ranking system.
-## Created with
 
 ## Objectives
 - Build core LMS with quizzes and tracking
